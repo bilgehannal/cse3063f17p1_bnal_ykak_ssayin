@@ -2,6 +2,7 @@ package com.monopoly;
 
 public class Player {
 
+    // MARK: Properties
     private String ID;
     private String username;
     private double currency;
@@ -9,12 +10,12 @@ public class Player {
     //private Area[] ownedAreas;
     //private Card[] ownedCards;
 
-    // Constructor
+    // MARK: Constructor
     public Player(String username) {
         this.username = username;
     }
 
-    // Encapsulation
+    // MARK: Encapsulation
     public String getUsername() {
         return this.username;
     }
@@ -23,9 +24,19 @@ public class Player {
         this.username = username;
     }
 
+<<<<<<< HEAD
     public String getID() { return this.ID; }
 
     public void setID(String ID) { this.ID = ID; }
+=======
+    public String getID() {
+        return this.ID;
+    }
+
+    public void setID(String id) {
+        this.ID = id;
+    }
+>>>>>>> master
 
     public double getCurrency() {
         return this.currency;
@@ -41,5 +52,26 @@ public class Player {
 
     public void setPosition(Position position) {
         this.position = position;
+    }
+
+    // MARK: Utility Methods
+    public void addCurrency(double currency) {
+
+        this.currency = this.currency + currency;
+    }
+
+    private boolean canPay(double amount){
+        if (this.currency > amount) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean pay(double amount){
+        if (canPay(amount)){
+            this.currency -= amount;
+            return true;
+        }
+        return false;
     }
 }
