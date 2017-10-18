@@ -2,17 +2,18 @@ package com.monopoly;
 
 public class Game {
 
+    // MARK: Properties
     private String ID;
     private Player[] players; //players will be ordered by first rolls of dice.
     //private Map currentMap;
     private Player winner;
 
-    // Constructor
+    // MARK: Constructor
     public Game(Player[] players) {
         this.players = players;
     }
 
-    // Encapsulation
+    // MARK: Encapsulation
     public String getID() {
         return this.ID;
     }
@@ -39,7 +40,7 @@ public class Game {
         this.map = map;
     }
     */
-
+    // MARK: Utility Methods
     public Player getWinner() {
         return this.winner;
     }

@@ -2,14 +2,15 @@ package com.monopoly;
 
 public class Position {
 
+    // MARK: Properties
     private int index;
 
-    // Constructor
+    // MARK: Constructor
     public Position(int index) {
         this.index = index;
     }
 
-    // Encapsulation
+    // MARK: Encapsulation
     public int getIndex() {
         return this.index;
     }
