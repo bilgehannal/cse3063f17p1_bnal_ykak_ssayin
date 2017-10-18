@@ -23,13 +23,9 @@ public class Player {
         this.username = username;
     }
 
-    public String getID() {
-        return this.id;
-    }
+    public String getID() { return this.ID; }
 
-    public void setID(String id) {
-        this.id = id;
-    }
+    public void setID(String ID) { this.ID = ID; }
 
     public double getCurrency() {
         return this.currency;
