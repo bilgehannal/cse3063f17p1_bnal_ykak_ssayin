@@ -24,19 +24,9 @@ public class Player {
         this.username = username;
     }
 
-<<<<<<< HEAD
     public String getID() { return this.ID; }
 
     public void setID(String ID) { this.ID = ID; }
-=======
-    public String getID() {
-        return this.ID;
-    }
-
-    public void setID(String id) {
-        this.ID = id;
-    }
->>>>>>> master
 
     public double getCurrency() {
         return this.currency;
