@@ -1,14 +1,16 @@
 package com.monopoly;
+import java.awt.geom.Area;
+import java.util.Random;
 
 public class Player {
 
     // MARK: Properties
     private String ID;
     private String username;
-    private double currency;
     private Position position;
-    //private Area[] ownedAreas;
-    //private Card[] ownedCards;
+    private Money money;
+    private Area[] ownedAreas;
+    private Die[] dice;
 
     // MARK: Constructor
     public Player(String username) {
@@ -28,14 +30,6 @@ public class Player {
 
     public void setID(String ID) { this.ID = ID; }
 
-    public double getCurrency() {
-        return this.currency;
-    }
-
-    public void setCurrency(double currency) {
-        this.currency = currency;
-    }
-
     public Position getPosition() {
         return this.position;
     }
@@ -44,24 +38,47 @@ public class Player {
         this.position = position;
     }
 
+    public Money getMoney() { return this.money; }
+
+    public void setMoney(Money money) { this.money = money; }
+
+    public Area[] getOwnedAreas() { return this.ownedAreas; }
+
+    public void setOwnedAreas(Area[] ownedAreas) { this.ownedAreas = ownedAreas; }
+
+    public Die[] getDice() { return this.dice; }
+
+    public void setDice(Die[] dice) { this.dice = dice; }
+
+
     // MARK: Utility Methods
-    public void addCurrency(double currency) {
+    public void addMoney(Money money) {
 
-        this.currency = this.currency + currency;
+        this.money.amount = this.money.amount + money.amount;
     }
 
-    private boolean canPay(double amount){
-        if (this.currency > amount) {
+    private boolean canPay(Money money){
+        if (this.money.amount > money.amount) {
             return true;
         }
         return false;
     }
 
-    public boolean pay(double amount){
-        if (canPay(amount)){
-            this.currency -= amount;
+    public boolean pay(Money money){
+        if (canPay(money.amount)){
+            this.money.amount -= money.amount;
             return true;
         }
         return false;
+    }
+    public int[] rollDice() {
+        int[] diceArray = new int[2];
+        Random generator = new Random();
+
+        for (int i = 0; i <diceArray.length ; i++) {
+            diceArray[i] = generator.nextInt(6)+1;
+        }
+
+        return diceArray;
     }
 }
