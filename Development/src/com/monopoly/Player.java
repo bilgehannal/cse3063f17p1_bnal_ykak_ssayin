@@ -53,20 +53,21 @@ public class Player {
 
     // MARK: Utility Methods
     public void addMoney(Money money) {
-
-        this.money.amount = this.money.amount + money.amount;
+        double newAmount = this.money.getAmount() + money.getAmount();
+        this.money.setAmount(newAmount);
     }
 
     private boolean canPay(Money money){
-        if (this.money.amount > money.amount) {
+        if (this.money.getAmount() > money.getAmount()) {
             return true;
         }
         return false;
     }
 
     public boolean pay(Money money){
-        if (canPay(money.amount)){
-            this.money.amount -= money.amount;
+        if (canPay(money)){
+            double newAmount = this.money.getAmount() - money.getAmount();
+            this.money.setAmount(newAmount);
             return true;
         }
         return false;
