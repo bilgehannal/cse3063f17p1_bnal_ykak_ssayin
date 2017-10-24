@@ -1,35 +1,31 @@
 package com.monopoly;
 
+// Singleton design pattern. Since we would like to assure bank instance will be created only once.
 public class Bank {
 
     // MARK: Properties
-    private double currency = 0;
-    // private Card[] cards;
+    private static Bank sharedBank;
+    private Money money;
 
     // MARK: Constructors
-    public Bank(double currency){
-        this.currency = currency;
-    }
+    protected Bank() { }
 
-    public Bank() { };
+    public static Bank getInstance() {
+
+        if (sharedBank == null) {
+            sharedBank = new Bank();
+        }
+        return sharedBank;
+    }
 
     // MARK: Encapsulation
-    public double getCurrency() {
-        return this.currency;
+    public double getMoney() {
+        return this.money;
     }
 
-    public void setCurrency(double currency) {
-        this.currency = currency;
+    public void setMoney(Money money) {
+        this.money = money;
     }
-    /*
-    public Card[] getCards() {
-        return this.cards;
-    }
-
-    public void setCards(Card[] cards) {
-        this.cards = cards;
-    }
-    */
 
     // MARK: Utility Methods
     public boolean pay(Player player,double amount) {
