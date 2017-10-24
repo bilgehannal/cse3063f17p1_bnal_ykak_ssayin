@@ -19,7 +19,7 @@ public class Bank {
     }
 
     // MARK: Encapsulation
-    public double getMoney() {
+    public Money getMoney() {
         return this.money;
     }
 
@@ -28,18 +28,18 @@ public class Bank {
     }
 
     // MARK: Utility Methods
-    public boolean pay(Player player,double amount) {
-        if (this.currency > amount) {
-            player.addCurrency(amount);
-            this.currency -= amount;
+    public boolean pay(Player player,Money money) {
+        if (this.money.getAmount() > money.getAmount()) {
+            player.addCurrency(money.getAmount());
+            this.money.setAmount(money.getAmount());
             return true;
         }
         return false;
     }
 
-    public boolean receivePayment(Player player,double amount) {
-        if (player.pay(amount)){
-            this.currency += amount;
+    public boolean receivePayment(Player player,Money money) {
+        if (player.pay(money.getAmount())){
+            this.money.setAmount(money.getAmount());
             return true;
         }
         return false;
