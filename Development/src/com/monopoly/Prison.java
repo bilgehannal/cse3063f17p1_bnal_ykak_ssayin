@@ -6,6 +6,12 @@ public class Prison extends Block {
 
     private Money penance;
 
+    // MARK: Constructor
+
+    public Prison(Money penance) {
+        this.penance = penance;
+    }
+
     //MARK: Encapsulation
 
 
@@ -19,6 +25,10 @@ public class Prison extends Block {
 
     @Override
     public void interact(Player player) {
+        if(player.pay(penance)) {
+            ""
+        } else {
 
+        }
     }
 }

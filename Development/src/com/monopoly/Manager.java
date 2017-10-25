@@ -118,16 +118,21 @@ public class Manager {
     public void play(Player player) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please press any key to roll the dice");
+        System.out.println("Please press enter to roll the dice");
         sc.nextLine();
 
         player.rollDice();
+        System.out.println("Dice values: " + player.getDice()[0].getFaceValue() + " - " + player.getDice()[1].getFaceValue());
+
         int numberOfBlock = Manager.getInstance().getBoard().getBlocks().size();
         int newPosition = (player.getPosition().getIndex() + player.getTotalDiceValue()) % numberOfBlock;
         player.getPosition().setIndex(newPosition);
-        System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
 
         Block currentBlock = Manager.getInstance().getBoard().getBlocks().get(player.getPosition().getIndex());
+        System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
+        System.out.println("Name of the block is: " + ((Area)(currentBlock)).getName());
+        System.out.println("Index of Block: " + newPosition);
+
         currentBlock.interact(player);
 
         System.out.println();

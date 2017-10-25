@@ -15,7 +15,7 @@ public class Area extends Municipality {
 
     public Area(String name, Money initialCost) {
         this.name = name;
-        this.initialCost = getInitialCost();
+        this.initialCost = initialCost;
 
         rentPrices = new ArrayList<Money>();
         prices = new ArrayList<Money>();

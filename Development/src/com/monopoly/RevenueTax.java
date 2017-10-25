@@ -6,6 +6,11 @@ public class RevenueTax extends Block {
 
     private Money taxAmount;
 
+    // CONSTRUCTOR:
+    public RevenueTax(Money taxAmount) {
+        this.taxAmount = taxAmount;
+    }
+
     //MARK: Encapsulation
 
 
@@ -19,7 +24,7 @@ public class RevenueTax extends Block {
 
     @Override
     public void interact(Player player) {
-
+        player.pay(taxAmount);
     }
 
 
