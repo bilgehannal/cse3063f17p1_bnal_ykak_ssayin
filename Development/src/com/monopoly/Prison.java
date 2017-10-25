@@ -26,7 +26,7 @@ public class Prison extends Block {
     @Override
     public void interact(Player player) {
         if(player.pay(penance)) {
-            ""
+            System.out.println(player.getUsername() + " paid tax:" + penance );
         } else {
 
         }

@@ -1,13 +1,20 @@
 package com.monopoly;
 
-public abstract class Municipality extends Block {
+import java.util.ArrayList;
+
+public class Municipality {
 
     // MARK: Properties
 
     private String municipalityName;
-    private int numberOfAreas;
+    private ArrayList<Area> areas;
 
     // MARK: CONSTRUCTOR
+
+    public Municipality(String municipalityName) {
+        this.municipalityName = municipalityName;
+        areas = new ArrayList<Area>();
+    }
 
     // MARK: Encapsulation
 
@@ -20,13 +27,16 @@ public abstract class Municipality extends Block {
         return municipalityName;
     }
 
-    public void setNumberOfAreas(int numberOfAreas) {
-        this.numberOfAreas = numberOfAreas;
+    public void setAreas(ArrayList<Area> areas) {
+        this.areas = areas;
     }
 
-    public int getNumberOfAreas() {
-        return numberOfAreas;
+    public ArrayList<Area> getAreas() {
+        return areas;
     }
 
-
+    public void addArea(Area area) {
+        areas.add(area);
+        area.setMunicipality(this);
+    }
 }

@@ -25,11 +25,17 @@ public class Money {
         this.amount = value;
     }
 
-    public void addAmount(Money money) {
-        this.amount += money.getAmount();
-    }
+
 
 
     // MARK: Utility Methods
 
+    public void addAmount(Money money) {
+        this.amount += money.getAmount();
+    }
+
+    @Override
+    public String toString() {
+        return getAmount() + " " + getCurrency();
+    }
 }

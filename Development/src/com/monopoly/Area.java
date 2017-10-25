@@ -2,7 +2,7 @@ package com.monopoly;
 
 import java.util.ArrayList;
 
-public class Area extends Municipality {
+public class Area extends Block {
 
     // MARK: Properties
 
@@ -10,6 +10,7 @@ public class Area extends Municipality {
     private Money initialCost;
     private ArrayList<Money> rentPrices;
     private ArrayList<Money> prices;
+    private Municipality municipality;
 
     // CONSTRUCTOR
 
@@ -43,6 +44,14 @@ public class Area extends Municipality {
 
     public void setRentPrices(ArrayList<Money> rentPrices) {
         this.rentPrices = rentPrices;
+    }
+
+    public void setMunicipality(Municipality municipality) {
+        this.municipality = municipality;
+    }
+
+    public Municipality getMunicipality() {
+        return municipality;
     }
 
     public ArrayList<Money> getRentPrices() {
