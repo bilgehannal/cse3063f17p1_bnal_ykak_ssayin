@@ -1,6 +1,7 @@
 package com.monopoly;
 import com.monopoly.utilities.PlayerComparator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -84,6 +85,27 @@ public class Main {
         }while(numberOfIteration > 100 || numberOfIteration < 1 );
 
         Manager.getInstance().setMaxNumberOfIterations(numberOfIteration);
+    }
+
+    public final static void clearConsole()
+    {
+        try
+        {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e)
+        {
+            //  Handle any exceptions.
+        }
     }
 
 }
