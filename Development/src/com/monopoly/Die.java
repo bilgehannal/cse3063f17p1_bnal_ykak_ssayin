@@ -6,12 +6,12 @@ public class Die {
     private int faceValue;
 
     // MARK: Constructors
-    public Die(int value){
-        this.faceValue = value;
+    public Die(){
+        this.faceValue = 1;
     }
 
     // MARK: Encapsulation
-    public double getFaceValue() {
+    public int getFaceValue() {
         return this.faceValue;
     }
 
