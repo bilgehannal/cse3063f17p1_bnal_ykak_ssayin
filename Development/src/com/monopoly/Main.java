@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
         initializePlayers();
+        System.out.print("\033[H\033[2J");
         determineIterations();
         Manager.getInstance().reorderPlayers(Manager.getInstance().getPlayers());
 
