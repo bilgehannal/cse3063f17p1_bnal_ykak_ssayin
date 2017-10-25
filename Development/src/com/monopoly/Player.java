@@ -1,5 +1,4 @@
 package com.monopoly;
-import java.awt.geom.Area;
 import java.util.Random;
 
 public class Player {
@@ -15,6 +14,16 @@ public class Player {
     // MARK: Constructor
     public Player(String username) {
         this.username = username;
+        dice = new Die[2];
+        dice[0] = new Die();
+        dice[1] = new Die();
+    }
+    public Player() {
+        String name = Manager.getInstance().getNameFromNameSet();
+        this.username = name;
+        dice = new Die[2];
+        dice[0] = new Die();
+        dice[1] = new Die();
     }
 
     // MARK: Encapsulation
@@ -72,14 +81,21 @@ public class Player {
         }
         return false;
     }
-    public int[] rollDice() {
-        int[] diceArray = new int[2];
+    public void rollDice() {
         Random generator = new Random();
 
-        for (int i = 0; i <diceArray.length ; i++) {
-            diceArray[i] = generator.nextInt(6)+1;
+        for (int i = 0; i <dice.length ; i++) {
+            int newFaceValue = generator.nextInt(6)+1;
+            dice[i].setFaceValue(newFaceValue);
         }
-
-        return diceArray;
     }
+
+    public int getTotalDiceValue() {
+        int sum = 0;
+        for (Die die : dice) {
+            sum += die.getFaceValue();
+        }
+        return sum;
+    }
+
 }

@@ -30,7 +30,7 @@ public class Bank {
     // MARK: Utility Methods
     public boolean pay(Player player,Money money) {
         if (this.money.getAmount() > money.getAmount()) {
-            player.addCurrency(money.getAmount());
+            player.addMoney(money);
             this.money.setAmount(money.getAmount());
             return true;
         }
@@ -38,7 +38,7 @@ public class Bank {
     }
 
     public boolean receivePayment(Player player,Money money) {
-        if (player.pay(money.getAmount())){
+        if (player.pay(money)){
             this.money.setAmount(money.getAmount());
             return true;
         }
