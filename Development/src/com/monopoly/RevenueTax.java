@@ -17,5 +17,10 @@ public class RevenueTax extends Block {
         return taxAmount;
     }
 
+    @Override
+    public void interact(Player player) {
+
+    }
+
 
 }

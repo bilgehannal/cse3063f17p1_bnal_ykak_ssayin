@@ -13,10 +13,9 @@ public class Player {
 
     // MARK: Constructor
     public Player(String username) {
+        this();
         this.username = username;
-        dice = new Die[2];
-        dice[0] = new Die();
-        dice[1] = new Die();
+
     }
     public Player() {
         String name = Manager.getInstance().getNameFromNameSet();
@@ -24,6 +23,9 @@ public class Player {
         dice = new Die[2];
         dice[0] = new Die();
         dice[1] = new Die();
+        position = new Position(0);
+        money = new Money("Monopoly Money", 600);
+
     }
 
     // MARK: Encapsulation
@@ -81,6 +83,15 @@ public class Player {
         }
         return false;
     }
+
+    public boolean pay(Player player, Money money) {
+        if(pay(money)) {
+            player.getMoney().addAmount(money);
+            return true;
+        }
+        return false;
+    }
+
     public void rollDice() {
         Random generator = new Random();
 

@@ -16,4 +16,9 @@ public class Prison extends Block {
     public Money getPenance() {
         return penance;
     }
+
+    @Override
+    public void interact(Player player) {
+
+    }
 }

@@ -1,13 +1,26 @@
 package com.monopoly;
 
+import java.util.ArrayList;
+
 public class Area extends Municipality {
 
     // MARK: Properties
 
     private String name;
     private Money initialCost;
-    private Money rentPrices[];
-    private Money prices[];
+    private ArrayList<Money> rentPrices;
+    private ArrayList<Money> prices;
+
+    // CONSTRUCTOR
+
+    public Area(String name, Money initialCost) {
+        this.name = name;
+        this.initialCost = getInitialCost();
+
+        rentPrices = new ArrayList<Money>();
+        prices = new ArrayList<Money>();
+
+    }
 
     //MARK: Encapsulation
 
@@ -28,19 +41,37 @@ public class Area extends Municipality {
         return initialCost;
     }
 
-    public void setRentPrices(Money[] rentPrices) {
+    public void setRentPrices(ArrayList<Money> rentPrices) {
         this.rentPrices = rentPrices;
     }
 
-    public Money[] getRentPrices() {
+    public ArrayList<Money> getRentPrices() {
         return rentPrices;
     }
 
-    public void setPrices(Money[] prices) {
+    public void setPrices(ArrayList<Money> prices) {
         this.prices = prices;
     }
 
-    public Money[] getPrices() {
+    public ArrayList<Money> getPrices() {
         return prices;
     }
+
+    // MARK: Utilities
+
+    @Override
+    public void interact(Player player) {
+        player.pay(getTotalRent());
+        System.out.println(getTotalRent().getAmount() + " monopoly money is paid to the Bank at " + this.name);
+    }
+
+    public Money getTotalRent() {
+        Money money = new Money("Monopoly Money", 0);
+        for (Money rent : rentPrices) {
+            money.addAmount(rent);
+        }
+        return money;
+    }
+
+
 }

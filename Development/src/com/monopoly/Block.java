@@ -16,4 +16,6 @@ public abstract class Block {
     public String getID() {
         return ID;
     }
+
+    public abstract void interact(Player player);
 }

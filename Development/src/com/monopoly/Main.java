@@ -12,17 +12,29 @@ public class Main {
 
     public static void main(String[] args) {
 
-        initializePlayers();
-        System.out.print("\033[H\033[2J");
+        initializeGame();
+        clearConsole();
+
         determineIterations();
+        clearConsole();
+
         Manager.getInstance().reorderPlayers(Manager.getInstance().getPlayers());
+        printPlayerDiceInfo();
+
+        for(int i=0; i<Manager.getInstance().getMaxNumberOfIterations(); i++) {
+            for (Player player : Manager.getInstance().getPlayers() ) {
+                Manager.getInstance().play(player);
+            }
+        }
+
 
     }
 
     //MARK: Utility Functions
-    private static void initializePlayers() {
+    private static void initializeGame() {
         createMyPlayer();
         createOtherPlayers();
+        Manager.getInstance().setBoard(new Board());
     }
 
     private static void createMyPlayer() {
@@ -88,25 +100,15 @@ public class Main {
         Manager.getInstance().setMaxNumberOfIterations(numberOfIteration);
     }
 
-    public final static void clearConsole()
-    {
-        try
-        {
-            final String os = System.getProperty("os.name");
+    private static void printPlayerDiceInfo() {
+        System.out.println("Order of Players: ");
+        for (Player player : Manager.getInstance().getPlayers()) {
+            System.out.println(player.getUsername() + "   Dice: " + player.getDice()[0].getFaceValue() + " - " + player.getDice()[1].getFaceValue());
+        }
+    }
 
-            if (os.contains("Windows"))
-            {
-                Runtime.getRuntime().exec("cls");
-            }
-            else
-            {
-                Runtime.getRuntime().exec("clear");
-            }
-        }
-        catch (final Exception e)
-        {
-            //  Handle any exceptions.
-        }
+    public static void clearConsole() {
+        System.out.print("\033[H\033[2J");
     }
 
 }

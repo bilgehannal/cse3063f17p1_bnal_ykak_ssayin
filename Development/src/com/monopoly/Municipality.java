@@ -1,11 +1,13 @@
 package com.monopoly;
 
-public class Municipality extends Block {
+public abstract class Municipality extends Block {
 
     // MARK: Properties
 
     private String municipalityName;
     private int numberOfAreas;
+
+    // MARK: CONSTRUCTOR
 
     // MARK: Encapsulation
 
@@ -25,4 +27,6 @@ public class Municipality extends Block {
     public int getNumberOfAreas() {
         return numberOfAreas;
     }
+
+
 }

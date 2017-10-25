@@ -5,6 +5,8 @@ import com.monopoly.utilities.PlayerComparator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.util.Scanner;
+
 // Singleton design pattern.
 public class Manager {
 
@@ -75,6 +77,10 @@ public class Manager {
         this.maxNumberOfIterations = maxNumberOfIterations;
     }
 
+    public int getMaxNumberOfIterations() {
+        return maxNumberOfIterations;
+    }
+
     // MARK: Utility Methods
     public void addPlayer(Player player){
         players.add(player);
@@ -99,6 +105,33 @@ public class Manager {
         }
         Collections.sort(players, new PlayerComparator());
         Collections.reverse(players);
+    }
+
+    public void printGameInfo(Player player) {
+
+    }
+
+    public void printGameInfo() {
+
+    }
+
+    public void play(Player player) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please press any key to roll the dice");
+        sc.nextLine();
+
+        player.rollDice();
+        int numberOfBlock = Manager.getInstance().getBoard().getBlocks().size();
+        int newPosition = (player.getPosition().getIndex() + player.getTotalDiceValue()) % numberOfBlock;
+        player.getPosition().setIndex(newPosition);
+        System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
+
+        Block currentBlock = Manager.getInstance().getBoard().getBlocks().get(player.getPosition().getIndex());
+        currentBlock.interact(player);
+
+        System.out.println();
+
     }
 
 }
