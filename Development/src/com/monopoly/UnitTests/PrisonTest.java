@@ -5,8 +5,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+import com.monopoly.*;
 class PrisonTest {
+    Money money = new Money("Dolar",300);
+    Prison prison = new Prison(money);
+    Player player = new Player();
     @BeforeEach
     void setUp() {
     }
@@ -37,6 +40,7 @@ class PrisonTest {
 
     @Test
     void interact1() {
+        prison.interact(player);
     }
 
 }

@@ -3,10 +3,16 @@ package com.monopoly.UnitTests;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import com.monopoly.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
+    Money money = new Money("Dollar",200);
+    Player player = new Player();
+    Player player2 = new Player();
+    Die dice = new Die();
+    Die dice1 = new Die();
+    Die diceArray[] = new Die[2];
     @BeforeEach
     void setUp() {
     }
@@ -16,71 +22,38 @@ class PlayerTest {
     }
 
     @Test
-    void getUsername() {
-    }
-
-    @Test
-    void setUsername() {
-    }
-
-    @Test
-    void getID() {
-    }
-
-    @Test
-    void setID() {
-    }
-
-    @Test
-    void getPosition() {
-    }
-
-    @Test
-    void setPosition() {
-    }
-
-    @Test
-    void getMoney() {
-    }
-
-    @Test
-    void setMoney() {
-    }
-
-    @Test
-    void getOwnedAreas() {
-    }
-
-    @Test
-    void setOwnedAreas() {
-    }
-
-    @Test
-    void getDice() {
-    }
-
-    @Test
-    void setDice() {
-    }
-
-    @Test
     void addMoney() {
+        player.addMoney(money);
+        assertEquals(800,player.getMoney().getAmount());
     }
 
     @Test
     void pay() {
+      boolean pay =  player.pay(money) && player.getMoney().getAmount() >money.getAmount();
+        assertTrue(pay);
     }
-
     @Test
     void pay1() {
+        boolean pay1 = player.pay(player2,money) && player2.getMoney().getAmount() == 800;
+        assertTrue(pay1);
     }
 
     @Test
     void rollDice() {
+        player.rollDice();
+        boolean interval = 0 < player.getTotalDiceValue() || player.getTotalDiceValue()>=12;
+        assertTrue(interval);
     }
 
     @Test
     void getTotalDiceValue() {
+        dice.setFaceValue(3);
+        dice1.setFaceValue(6);
+        diceArray[0]=dice;
+        diceArray[1]=dice1;
+        player.setDice(diceArray);
+        assertEquals(9,player.getTotalDiceValue());
+
     }
 
 }

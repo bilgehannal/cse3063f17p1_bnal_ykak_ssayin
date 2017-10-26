@@ -16,14 +16,6 @@ class BlockTest {
     }
 
     @Test
-    void setID() {
-    }
-
-    @Test
-    void getID() {
-    }
-
-    @Test
     void interact() {
     }
 

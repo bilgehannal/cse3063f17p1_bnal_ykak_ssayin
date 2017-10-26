@@ -19,6 +19,5 @@ public class Die {
         this.faceValue = value;
     }
 
-    // MARK: Utility Methods
 
 }
