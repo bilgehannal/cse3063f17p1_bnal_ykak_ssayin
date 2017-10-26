@@ -134,7 +134,7 @@ public class Manager {
 
         Block currentBlock = Manager.getInstance().getBoard().getBlocks().get(player.getPosition().getIndex());
         System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
-        System.out.println("Name of the block is: " + ((Area)(currentBlock)).getName());
+        //System.out.println("Name of the block is: " + ((Area)(currentBlock)).getName());
         System.out.println("Index of Block: " + newPosition);
 
         currentBlock.interact(player);

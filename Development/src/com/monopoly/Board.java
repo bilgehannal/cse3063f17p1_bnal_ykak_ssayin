@@ -19,18 +19,11 @@ public class Board {
         blocks.add(new Area("Kadıkoy", new Money("Monopoly Money", 100)));
         blocks.add(new Area("Uskudar", new Money("Monopoly Money", 100)));
         blocks.add(new Area("Atasehir", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Besiktas2", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Kadıkoy2", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Uskudar2", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Atasehir2", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Besiktas3", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Kadıkoy3", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Uskudar3", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Atasehir3", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Besiktas4", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Kadıkoy5", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Uskudar5", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Atasehir5", new Money("Monopoly Money", 100)));
+        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
+        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
+        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
+        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
+        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
     }
 
     // MARK: Encapsulation

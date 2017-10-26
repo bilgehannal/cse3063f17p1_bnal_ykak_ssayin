@@ -39,6 +39,8 @@ public class Main {
             }
         }
 
+        showResult();
+
 
     }
 
@@ -121,6 +123,18 @@ public class Main {
 
     public static void clearConsole() {
         System.out.print("\033[H\033[2J");
+    }
+
+    public static void showResult() {
+        Player winner = Manager.getInstance().getPlayers().get(0);
+        for (Player player : Manager.getInstance().getPlayers()) {
+            if(player.getMoney().getAmount() > winner.getMoney().getAmount()) {
+                winner = player;
+            }
+            System.out.println(player.getUsername() + " has " + winner.getMoney());
+        }
+        System.out.println();
+        System.out.println(winner.getUsername() + " wins the game with " + winner.getMoney());
     }
 
 }

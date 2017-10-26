@@ -76,11 +76,11 @@ public class Area extends Block {
 
     // getTotalRent calculates the total rent value as a money and returns.
     public Money getTotalRent() {
-        Money money = new Money("Monopoly Money", 0);
+        double totalAmountOfMoney = 0;
         for (Money rent : rentPrices) {
-            money.addAmount(rent);
+            totalAmountOfMoney += rent.getAmount();
         }
-        return money;
+        return new Money("Monopoly Money", totalAmountOfMoney);
     }
 
 

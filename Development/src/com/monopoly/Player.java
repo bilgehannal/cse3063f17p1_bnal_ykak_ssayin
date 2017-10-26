@@ -90,6 +90,9 @@ public class Player {
         if (canPay(money)){
             double newAmount = this.money.getAmount() - money.getAmount();
             this.money.setAmount(newAmount);
+            double currentBankAmount = Bank.getInstance().getMoney().getAmount();
+            Bank.getInstance().getMoney().setAmount(currentBankAmount + money.getAmount());
+            this.getMoney().setAmount(newAmount);
             return true;
         }
         return false;
@@ -97,7 +100,7 @@ public class Player {
 
     public boolean pay(Player player, Money money) {
         if(pay(money)) {
-            player.getMoney().addAmount(money);
+            player.getMoney().setAmount(player.getMoney().getAmount() + money.getAmount());
             return true;
         }
         return false;
