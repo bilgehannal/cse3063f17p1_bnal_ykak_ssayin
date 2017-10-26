@@ -74,6 +74,7 @@ public class Area extends Block {
         System.out.println(getTotalRent().getAmount() + " monopoly money is paid to the Bank at " + this.name);
     }
 
+    // getTotalRent calculates the total rent value as a money and returns.
     public Money getTotalRent() {
         Money money = new Money("Monopoly Money", 0);
         for (Money rent : rentPrices) {
