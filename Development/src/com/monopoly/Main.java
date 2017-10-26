@@ -5,12 +5,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+        final long delayTime = 500;
 
         initializeGame();
         clearConsole();
@@ -23,7 +26,13 @@ public class Main {
 
         for(int i=0; i<Manager.getInstance().getMaxNumberOfIterations(); i++) {
             for (Player player : Manager.getInstance().getPlayers() ) {
+                System.out.println(player.getUsername() + "'s Turn:");
                 Manager.getInstance().play(player);
+                try {
+                    TimeUnit.MILLISECONDS.sleep(delayTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
 

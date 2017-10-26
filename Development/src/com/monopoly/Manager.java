@@ -82,6 +82,7 @@ public class Manager {
     }
 
     // MARK: Utility Methods
+
     public void addPlayer(Player player){
         players.add(player);
     }
@@ -118,9 +119,12 @@ public class Manager {
     public void play(Player player) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please press enter to roll the dice");
-        sc.nextLine();
-
+        if (!player.isAutoPlay()) {
+            System.out.println("Please press enter to roll the dice");
+            sc.nextLine();
+        } else {
+            System.out.println("Dice are rolled");
+        }
         player.rollDice();
         System.out.println("Dice values: " + player.getDice()[0].getFaceValue() + " - " + player.getDice()[1].getFaceValue());
 
