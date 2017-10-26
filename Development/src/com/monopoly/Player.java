@@ -1,4 +1,5 @@
 package com.monopoly;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Player {
@@ -8,13 +9,15 @@ public class Player {
     private String username;
     private Position position;
     private Money money;
-    private Area[] ownedAreas;
+    private ArrayList<Area> ownedAreas;
     private Die[] dice;
+    private boolean autoPlay;
 
     // MARK: Constructor
     public Player(String username) {
         this();
         this.username = username;
+        this.autoPlay = false;
 
     }
     public Player() {
@@ -25,6 +28,7 @@ public class Player {
         dice[1] = new Die();
         position = new Position(0);
         money = new Money("Monopoly Money", 600);
+        this.autoPlay = true;
 
     }
 
@@ -53,14 +57,21 @@ public class Player {
 
     public void setMoney(Money money) { this.money = money; }
 
-    public Area[] getOwnedAreas() { return this.ownedAreas; }
+    public ArrayList<Area> getOwnedAreas() { return this.ownedAreas; }
 
-    public void setOwnedAreas(Area[] ownedAreas) { this.ownedAreas = ownedAreas; }
+    public void setOwnedAreas(ArrayList<Area> ownedAreas) { this.ownedAreas = ownedAreas; }
 
     public Die[] getDice() { return this.dice; }
 
     public void setDice(Die[] dice) { this.dice = dice; }
 
+    public void setAutoPlay(boolean autoPlay) {
+        this.autoPlay = autoPlay;
+    }
+
+    public boolean isAutoPlay() {
+        return autoPlay;
+    }
 
     // MARK: Utility Methods
     public void addMoney(Money money) {
