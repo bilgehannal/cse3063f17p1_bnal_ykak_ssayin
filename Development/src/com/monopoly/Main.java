@@ -15,19 +15,22 @@ public class Main {
 
         final long delayTime = 500;
 
-        initializeGame();
+        initializeGame(); //initilize players and board.
         clearConsole();
 
-        determineIterations();
+        determineIterations(); // How many iteration will be done?
         clearConsole();
 
-        Manager.getInstance().reorderPlayers(Manager.getInstance().getPlayers());
+        Manager.getInstance().reorderPlayers(Manager.getInstance().getPlayers()); // Ordering players
         printPlayerDiceInfo();
 
+        //Iteration Part
         for(int i=0; i<Manager.getInstance().getMaxNumberOfIterations(); i++) {
             for (Player player : Manager.getInstance().getPlayers() ) {
                 System.out.println(player.getUsername() + "'s Turn:");
                 Manager.getInstance().play(player);
+
+                // There is a delay to check the other players' movment
                 try {
                     TimeUnit.MILLISECONDS.sleep(delayTime);
                 } catch (InterruptedException e) {
