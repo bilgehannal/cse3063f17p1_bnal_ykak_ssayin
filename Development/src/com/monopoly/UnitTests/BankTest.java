@@ -27,10 +27,7 @@ class BankTest {
         /*double prev = player.getMoney().getAmount();
         Bank.getInstance().pay(player,money);
         double current = player.getMoney().getAmount();
-        boolean paySuccess = (current - prev) == 300;
-        assertTrue(paySuccess);
-        */
-
+        assertEquals(prev,current);*/
     }
 
     @Test
