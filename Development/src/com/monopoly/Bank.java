@@ -8,7 +8,9 @@ public class Bank {
     private Money money;
 
     // MARK: Constructors
-    protected Bank() { }
+    protected Bank() {
+        money = new Money("Monopoly Money", 100000);
+    }
 
     public static Bank getInstance() {
 
