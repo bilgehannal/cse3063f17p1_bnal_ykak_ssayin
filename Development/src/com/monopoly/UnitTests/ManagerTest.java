@@ -20,30 +20,6 @@ class ManagerTest {
     }
 
     @Test
-    void getPlayers() {
-    }
-
-    @Test
-    void setPlayers() {
-    }
-
-    @Test
-    void getBoard() {
-    }
-
-    @Test
-    void setBoard() {
-    }
-
-    @Test
-    void setNameSet() {
-    }
-
-    @Test
-    void getNameFromNameSet() {
-    }
-
-    @Test
     void setWinner() {
     }
 

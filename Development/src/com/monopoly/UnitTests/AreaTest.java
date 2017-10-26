@@ -1,8 +1,18 @@
 package com.monopoly.UnitTests;
 
+import com.monopoly.*;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AreaTest {
+    Money money = new Money("Money",100);
+    Money money1 = new Money("Money",300);
+    Area area = new Area("AreaName",money);
+    Player player = new Player();
+    ArrayList<Money> rentPrices;
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
     }
@@ -12,71 +22,18 @@ class AreaTest {
     }
 
     @org.junit.jupiter.api.Test
-    void setName() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getName() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void setInitialCost() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getInitialCost() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void setRentPrices() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getRentPrices() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void setPrices() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getPrices() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void interact() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getTotalRent() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void setMunicipalityName() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getMunicipalityName() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void setNumberOfAreas() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getNumberOfAreas() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void setID() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getID() {
-    }
-
-    @org.junit.jupiter.api.Test
     void interact1() {
+
+    }
+    @Test
+    void getTotalRent(){
+         /*rentPrices.add(money);
+         rentPrices.add(money1);
+         area.getRentPrices().add(money1);
+         area.getRentPrices().add(money);
+         boolean getTotal = area.getTotalRent().getAmount() == 400;
+         assertTrue(getTotal);
+         */
     }
 
 }

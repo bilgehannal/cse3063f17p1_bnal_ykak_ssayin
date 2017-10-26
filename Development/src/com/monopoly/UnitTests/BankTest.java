@@ -5,8 +5,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import com.monopoly.*;
 
 class BankTest {
+    Player player = new Player();
+    Money money = new Money("Dollar",300);
     @BeforeEach
     void setUp() {
     }
@@ -20,19 +23,23 @@ class BankTest {
     }
 
     @Test
-    void getMoney() {
-    }
-
-    @Test
-    void setMoney() {
-    }
-
-    @Test
     void pay() {
+        /*double prev = player.getMoney().getAmount();
+        Bank.getInstance().pay(player,money);
+        double current = player.getMoney().getAmount();
+        boolean paySuccess = (current - prev) == 300;
+        assertTrue(paySuccess);
+        */
+
     }
 
     @Test
     void receivePayment() {
+       /*double prev = Bank.getInstance().getMoney().getAmount();
+        Bank.getInstance().receivePayment(player,money);
+        double current = Bank.getInstance().getMoney().getAmount();
+        boolean success = current -prev == 300;
+        */
     }
 
 }
