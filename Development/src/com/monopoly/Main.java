@@ -1,9 +1,5 @@
 package com.monopoly;
-import com.monopoly.utilities.PlayerComparator;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +11,7 @@ public class Main {
 
         final long delayTime = 500;
 
-        initializeGame(); //initilize players and board.
+        initializeGame(); //initialize players and board.
         clearConsole();
 
         determineIterations(); // How many iteration will be done?
@@ -30,7 +26,7 @@ public class Main {
                 System.out.println(player.getUsername() + "'s Turn:");
                 Manager.getInstance().play(player);
 
-                // There is a delay to check the other players' movment
+                // There is a delay to check the other players' movement
                 try {
                     TimeUnit.MILLISECONDS.sleep(delayTime);
                 } catch (InterruptedException e) {

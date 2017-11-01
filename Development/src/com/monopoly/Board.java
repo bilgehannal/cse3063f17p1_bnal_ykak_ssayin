@@ -16,14 +16,14 @@ public class Board {
         blocks = new ArrayList<Block>();
 
         blocks.add(new Area("Besiktas", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Kadıkoy", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Uskudar", new Money("Monopoly Money", 100)));
-        blocks.add(new Area("Atasehir", new Money("Monopoly Money", 100)));
+
         blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
         blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
         blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
         blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
         blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
+        blocks.add(new GoPrison(new Money("Monopoly Money",50000)));
+        blocks.add(new VisitPrison());
     }
 
     // MARK: Encapsulation

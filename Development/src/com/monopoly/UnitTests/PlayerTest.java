@@ -7,7 +7,7 @@ import com.monopoly.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
-    Money money = new Money("Dollar",200);
+    Money money = new Money("Monopoly Money",200);
     Player player = new Player();
     Player player2 = new Player();
     Die dice = new Die();

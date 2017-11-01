@@ -5,10 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import com.monopoly.*;
 
-class MoneyTest {
-    Money money = new Money("Monopoly Money",300);
+class VisitPrisonTest {
     @BeforeEach
     void setUp() {
     }
@@ -18,23 +16,16 @@ class MoneyTest {
     }
 
     @Test
-    void getCurrency() {
+    void interact() {
     }
 
     @Test
-    void setCurrency() {
+    void setID() {
     }
 
     @Test
-    void getAmount() {
+    void getID() {
     }
 
-    @Test
-    void setAmount() {
-    }
-
-    @Test
-    void addAmount() {
-    }
 
 }

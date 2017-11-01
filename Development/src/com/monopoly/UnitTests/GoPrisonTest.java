@@ -6,9 +6,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import com.monopoly.*;
-
-class MoneyTest {
+class GoPrisonTest {
     Money money = new Money("Monopoly Money",300);
+    GoPrison prison = new GoPrison(money);
+    Player player = new Player();
     @BeforeEach
     void setUp() {
     }
@@ -18,23 +19,28 @@ class MoneyTest {
     }
 
     @Test
-    void getCurrency() {
+    void setPenance() {
     }
 
     @Test
-    void setCurrency() {
+    void getPenance() {
     }
 
     @Test
-    void getAmount() {
+    void interact() {
     }
 
     @Test
-    void setAmount() {
+    void setID() {
     }
 
     @Test
-    void addAmount() {
+    void getID() {
+    }
+
+    @Test
+    void interact1() {
+        prison.interact(player);
     }
 
 }

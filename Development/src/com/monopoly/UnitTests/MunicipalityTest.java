@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import com.monopoly.*;
 class MunicipalityTest {
-    Money money = new Money("Dolar ",300);
+    Money money = new Money("Monopoly Money ",300);
     Municipality mun = new Municipality("MuName");
     Municipality mun1 = new Municipality("MuName");
     Area area = new Area("Name",money);

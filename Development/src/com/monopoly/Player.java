@@ -12,12 +12,15 @@ public class Player {
     private ArrayList<Area> ownedAreas;
     private Die[] dice;
     private boolean autoPlay;
-
+    private boolean inJail;
+    private int inJailTime;
     // MARK: Constructor
     public Player(String username) {
         this();
         this.username = username;
         this.autoPlay = false;
+        this.inJail = false;
+        this.inJailTime = 0;
 
     }
     public Player() {
@@ -29,6 +32,8 @@ public class Player {
         position = new Position(0);
         money = new Money("Monopoly Money", 600);
         this.autoPlay = true;
+        this.inJail = false;
+        this.inJailTime = 0;
 
     }
 
@@ -71,6 +76,22 @@ public class Player {
 
     public boolean isAutoPlay() {
         return autoPlay;
+    }
+
+    public boolean isInJail() {
+        return inJail;
+    }
+
+    public void setInJail(boolean inJail) {
+        this.inJail = inJail;
+    }
+
+    public int getInJailTime() {
+        return inJailTime;
+    }
+
+    public void setInJailTime(int inJailTime) {
+        this.inJailTime = inJailTime;
     }
 
     // MARK: Utility Methods
