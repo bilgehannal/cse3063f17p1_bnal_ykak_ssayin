@@ -71,7 +71,7 @@ public class Area extends Block {
     @Override
     public void interact(Player player) {
         player.pay(getTotalRent());
-        System.out.println(getTotalRent().getAmount() + " monopoly money is paid to the Bank at " + this.name);
+        System.out.println(getTotalRent().toString() + " is paid to the Bank at " + this.name);
     }
 
     // getTotalRent calculates the total rent value as a money and returns.

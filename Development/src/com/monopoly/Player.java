@@ -13,6 +13,9 @@ public class Player {
     private Die[] dice;
     private boolean autoPlay;
 
+    // MARK: Constants
+    private final int initialMoney = 2000000;
+
     // MARK: Constructor
     public Player(String username) {
         this();
@@ -27,7 +30,7 @@ public class Player {
         dice[0] = new Die();
         dice[1] = new Die();
         position = new Position(0);
-        money = new Money(Money.Currency.TurkishLira,300);
+        money = new Money(Money.Currency.TurkishLira,initialMoney);
         this.autoPlay = true;
 
     }
@@ -92,14 +95,13 @@ public class Player {
             this.money.setAmount(newAmount);
             double currentBankAmount = Bank.getInstance().getMoney().getAmount();
             Bank.getInstance().getMoney().setAmount(currentBankAmount + money.getAmount());
-            this.getMoney().setAmount(newAmount);
             return true;
         }
         return false;
     }
 
     public boolean pay(Player player, Money money) {
-        if(pay(money)) {
+        if(canPay(money)) {
             player.getMoney().setAmount(player.getMoney().getAmount() + money.getAmount());
             return true;
         }

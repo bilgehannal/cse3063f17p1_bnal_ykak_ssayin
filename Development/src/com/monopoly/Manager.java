@@ -19,6 +19,9 @@ public class Manager {
     private int currentIteration = 0;
     private String nameSet[] = {"Doc","Grumpy","Happy","Sleepy","Dopey","Bashful","Sneezy"};
 
+    // MARK: Constants
+    private final int moneyAmountPerTurnOfBoard = 2000000;
+
     protected Manager() {
         // Initialization
         players = new ArrayList<Player>();
@@ -128,13 +131,10 @@ public class Manager {
         player.rollDice();
         System.out.println("Dice values: " + player.getDice()[0].getFaceValue() + " - " + player.getDice()[1].getFaceValue());
 
-        int numberOfBlock = Manager.getInstance().getBoard().getBlocks().size();
-        int newPosition = (player.getPosition().getIndex() + player.getTotalDiceValue()) % numberOfBlock;
-        player.getPosition().setIndex(newPosition);
+        int newPosition = updatePositionOf(player);
 
-        Block currentBlock = Manager.getInstance().getBoard().getBlocks().get(player.getPosition().getIndex());
+        Block currentBlock = getBoard().getBlocks().get(player.getPosition().getIndex());
         System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
-        //System.out.println("Name of the block is: " + ((Area)(currentBlock)).getName());
         System.out.println("Index of Block: " + newPosition);
 
         currentBlock.interact(player);
@@ -143,4 +143,17 @@ public class Manager {
 
     }
 
+    private int updatePositionOf(Player player) {
+        int numberOfBlock = getBoard().getBlocks().size();
+        int newPositionIndex = (player.getPosition().getIndex() + player.getTotalDiceValue()) % numberOfBlock;
+        int previousPositionIndex = player.getPosition().getIndex();
+
+        // handle paying money at each turn of the board
+        if (newPositionIndex < previousPositionIndex) {
+            Bank.getInstance().pay(player,new Money(Money.Currency.TurkishLira,moneyAmountPerTurnOfBoard));
+        }
+
+        player.getPosition().setIndex(newPositionIndex);
+        return newPositionIndex;
+    }
 }
