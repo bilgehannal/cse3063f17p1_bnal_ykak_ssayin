@@ -9,7 +9,8 @@ public class Bank {
 
     // MARK: Constructors
     protected Bank() {
-        money = new Money("Monopoly Money", 100000);
+        // Assuming all money over the game is limited with 100M ₺.
+        money = new Money(Money.Currency.TurkishLira,100000000);
     }
 
     public static Bank getInstance() {
