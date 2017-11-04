@@ -80,7 +80,7 @@ public class Area extends Block {
         for (Money rent : rentPrices) {
             totalAmountOfMoney += rent.getAmount();
         }
-        return new Money("Monopoly Money", totalAmountOfMoney);
+        return new Money(Money.Currency.TurkishLira,totalAmountOfMoney);
     }
 
 

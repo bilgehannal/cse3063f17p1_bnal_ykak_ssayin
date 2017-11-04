@@ -120,7 +120,7 @@ public class Manager {
 
         Scanner sc = new Scanner(System.in);
         if (!player.isAutoPlay()) {
-            System.out.println("Please press enter to roll the dice");
+            System.out.println("Please press any key to roll the dice");
             sc.nextLine();
         } else {
             System.out.println("Dice are rolled");

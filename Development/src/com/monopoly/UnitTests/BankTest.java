@@ -9,7 +9,7 @@ import com.monopoly.*;
 
 class BankTest {
     Player player = new Player();
-    Money money = new Money("Dollar",300);
+    Money money = new Money(Money.Currency.TurkishLira,300);
     @BeforeEach
     void setUp() {
     }

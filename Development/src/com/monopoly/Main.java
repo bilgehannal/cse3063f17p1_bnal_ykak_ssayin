@@ -30,7 +30,7 @@ public class Main {
                 System.out.println(player.getUsername() + "'s Turn:");
                 Manager.getInstance().play(player);
 
-                // There is a delay to check the other players' movment
+                // There is a delay to check the other players' movement
                 try {
                     TimeUnit.MILLISECONDS.sleep(delayTime);
                 } catch (InterruptedException e) {

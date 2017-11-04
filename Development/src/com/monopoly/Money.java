@@ -1,21 +1,27 @@
 package com.monopoly;
 
+import java.util.Currency;
+
 public class Money {
 
     // MARK: Properties
-    private String currency;
     private double amount;
+    private Currency currency;
+
+    public enum Currency {
+        TurkishLira //can be extended according to the needs of further iterations
+    }
 
     // MARK: Constructors
-    public Money(String currency, double amount){
-        this.currency = currency;
+    public Money(Currency currencyType, double amount){
+        this.currency = currencyType;
         this.amount = amount;
     }
 
     // MARK: Encapsulation
-    public String getCurrency() { return this.currency; }
+    public Currency getCurrency() { return this.currency; }
 
-    public void setCurrency(String currency) { this.currency = currency; }
+    public void setCurrency(Currency currency) { this.currency = currency; }
 
     public double getAmount() {
         return this.amount;

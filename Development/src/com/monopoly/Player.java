@@ -27,7 +27,7 @@ public class Player {
         dice[0] = new Die();
         dice[1] = new Die();
         position = new Position(0);
-        money = new Money("Monopoly Money", 600);
+        money = new Money(Money.Currency.TurkishLira,300);
         this.autoPlay = true;
 
     }
