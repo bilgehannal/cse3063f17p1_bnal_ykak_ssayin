@@ -34,7 +34,7 @@ public class Bank {
     public boolean pay(Player player,Money money) {
         if (this.money.getAmount() > money.getAmount()) {
             player.addMoney(money);
-            this.money.setAmount(money.getAmount());
+            this.money.setAmount(this.money.getAmount() - money.getAmount());
             return true;
         }
         return false;
@@ -42,7 +42,7 @@ public class Bank {
 
     public boolean receivePayment(Player player,Money money) {
         if (player.pay(money)){
-            this.money.setAmount(money.getAmount());
+            this.money.setAmount(this.money.getAmount() + money.getAmount());
             return true;
         }
         return false;

@@ -28,7 +28,7 @@ public class RevenueTax extends Block {
         double taxValue = currentMoneyOfPlayer / 10.0;
         taxAmount.setAmount(taxValue);
         player.pay(taxAmount);
-        System.out.println(taxValue + " monopoly money is paid to the Bank at RevenueTax Block ");
+        System.out.println(taxAmount.toString() + " is paid to the Bank at RevenueTax Block.");
 
     }
 

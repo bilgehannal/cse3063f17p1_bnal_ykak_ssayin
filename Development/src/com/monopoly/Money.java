@@ -1,7 +1,5 @@
 package com.monopoly;
 
-import java.util.Currency;
-
 public class Money {
 
     // MARK: Properties
@@ -9,7 +7,14 @@ public class Money {
     private Currency currency;
 
     public enum Currency {
-        TurkishLira //can be extended according to the needs of further iterations
+        TurkishLira; //can be extended according to the needs of further iterations
+        @Override
+        public String toString() {
+            switch (this) {
+                case TurkishLira: return " ₺ " + "(" + this.name() + ")";
+                default: return " " + this.name();
+            }
+        }
     }
 
     // MARK: Constructors
@@ -31,13 +36,10 @@ public class Money {
         this.amount = value;
     }
 
-
-
-
     // MARK: Utility Methods
 
     @Override
     public String toString() {
-        return getAmount() + " " + getCurrency();
+        return getAmount() + getCurrency().toString();
     }
 }
