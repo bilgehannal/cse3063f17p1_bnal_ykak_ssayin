@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AreaTest {
-    Money money = new Money("Monopoly Money",100);
-    Money money1 = new Money("Monopoly Money",300);
+    Money money = new Money(Money.Currency.TurkishLira,300);
+    Money money1 = new Money(Money.Currency.TurkishLira,300);
     Area area = new Area("AreaName",money);
     Player player = new Player();
     ArrayList<Money> rentPrices;

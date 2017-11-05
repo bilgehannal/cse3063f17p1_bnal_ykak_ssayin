@@ -113,7 +113,7 @@ public class Main {
     private static void printPlayerDiceInfo() {
         System.out.println("Order of Players: ");
         for (Player player : Manager.getInstance().getPlayers()) {
-            System.out.println(player.getUsername() + "   Dice: " + player.getDice()[0].getFaceValue() + " - " + player.getDice()[1].getFaceValue());
+            System.out.println(player.getUsername() + "   Dice: " + player.getDice().get(0).getFaceValue() + " - " + player.getDice().get(1).getFaceValue());
         }
     }
 

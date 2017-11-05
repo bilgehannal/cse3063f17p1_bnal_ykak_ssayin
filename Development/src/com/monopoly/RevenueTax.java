@@ -1,15 +1,12 @@
 package com.monopoly;
 
-public class RevenueTax extends Block {
+public abstract class RevenueTax extends Block {
 
     // MARK: Properties
 
     private Money taxAmount;
 
     // CONSTRUCTOR:
-    public RevenueTax(Money taxAmount) {
-        this.taxAmount = taxAmount;
-    }
 
     //MARK: Encapsulation
 
@@ -24,13 +21,9 @@ public class RevenueTax extends Block {
 
     @Override
     public void interact(Player player) {
-        double currentMoneyOfPlayer = player.getMoney().getAmount();
-        double taxValue = currentMoneyOfPlayer / 10.0;
-        taxAmount.setAmount(taxValue);
-        player.pay(taxAmount);
+        Money taxAmount = payTax(player);
         System.out.println(taxAmount.toString() + " is paid to the Bank at RevenueTax Block.");
-
     }
 
-
+    public abstract Money payTax(Player player);
 }

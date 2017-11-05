@@ -10,7 +10,7 @@ public class Player {
     private Position position;
     private Money money;
     private ArrayList<Area> ownedAreas;
-    private Die[] dice;
+    private ArrayList<Die> dice;
     private boolean autoPlay;
     private boolean inJail;
     private int inJailTime;
@@ -26,9 +26,7 @@ public class Player {
     public Player() {
         String name = Manager.getInstance().getNameFromNameSet();
         this.username = name;
-        dice = new Die[2];
-        dice[0] = new Die();
-        dice[1] = new Die();
+        diceInitialize();
         position = new Position(0);
         money = new Money(Money.Currency.TurkishLira,300);
         this.autoPlay = true;
@@ -66,9 +64,9 @@ public class Player {
 
     public void setOwnedAreas(ArrayList<Area> ownedAreas) { this.ownedAreas = ownedAreas; }
 
-    public Die[] getDice() { return this.dice; }
+    public ArrayList<Die> getDice() { return this.dice; }
 
-    public void setDice(Die[] dice) { this.dice = dice; }
+    public void setDice(ArrayList<Die> dice) { this.dice = dice; }
 
     public void setAutoPlay(boolean autoPlay) {
         this.autoPlay = autoPlay;
@@ -130,9 +128,9 @@ public class Player {
     public void rollDice() {
         Random generator = new Random();
 
-        for (int i = 0; i <dice.length ; i++) {
+        for (int i = 0; i <dice.size() ; i++) {
             int newFaceValue = generator.nextInt(6)+1;
-            dice[i].setFaceValue(newFaceValue);
+            dice.get(i).setFaceValue(newFaceValue);
         }
     }
 
@@ -142,6 +140,11 @@ public class Player {
             sum += die.getFaceValue();
         }
         return sum;
+    }
+
+    private void diceInitialize() {
+        dice.add(new Die());
+        dice.add(new Die());
     }
 
 }

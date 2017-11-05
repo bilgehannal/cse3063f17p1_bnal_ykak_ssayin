@@ -31,12 +31,15 @@ class PlayerComparatorTest {
         die2.setFaceValue(5);
         dice[0] = die1;
         dice[1] = die2;
-        player1.setDice(dice);
+        player1.getDice().add(die1);
+        player1.getDice().add(die2);
         die11.setFaceValue(4);
         die22.setFaceValue(5);
         dice1[0] = die11;
         dice1[1] = die22;
-       player2.setDice(dice1);
+        player2.getDice().add(dice1[0]);
+        player2.getDice().add(dice[1]);
+
        boolean equals = player1.getTotalDiceValue() == player2.getTotalDiceValue();
 
        boolean success = comp.compare(player1,player2) == 0 && equals;

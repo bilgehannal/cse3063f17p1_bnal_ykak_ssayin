@@ -7,7 +7,7 @@ import com.monopoly.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
-    Money money = new Money("Monopoly Money",200);
+    Money money = new Money(Money.Currency.TurkishLira,100);
     Player player = new Player();
     Player player2 = new Player();
     Die dice = new Die();
@@ -51,7 +51,8 @@ class PlayerTest {
         dice1.setFaceValue(6);
         diceArray[0]=dice;
         diceArray[1]=dice1;
-        player.setDice(diceArray);
+        player.getDice().add(diceArray[0]);
+        player.getDice().add(diceArray[1]);
         assertEquals(9,player.getTotalDiceValue());
 
     }

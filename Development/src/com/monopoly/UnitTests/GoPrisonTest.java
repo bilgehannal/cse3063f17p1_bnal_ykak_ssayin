@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import com.monopoly.*;
 class GoPrisonTest {
-    Money money = new Money("Monopoly Money",300);
+    Money money = new Money(Money.Currency.TurkishLira,300);
     GoPrison prison = new GoPrison(money);
     Player player = new Player();
     @BeforeEach

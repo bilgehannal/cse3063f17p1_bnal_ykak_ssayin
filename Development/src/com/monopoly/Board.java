@@ -15,14 +15,10 @@ public class Board {
 
         blocks = new ArrayList<Block>();
 
-        blocks.add(new Area("Besiktas", new Money("Monopoly Money", 100)));
+        blocks.add(new Area("Besiktas", new Money(Money.Currency.TurkishLira,100)));
 
-        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
-        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
-        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
-        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
-        blocks.add(new RevenueTax(new Money("Monopoly Money", 100)));
-        blocks.add(new GoPrison(new Money("Monopoly Money",50000)));
+        blocks.add(new IncomeTax());
+        blocks.add(new GoPrison(new Money(Money.Currency.TurkishLira,50000)));
         blocks.add(new VisitPrison());
     }
 

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.monopoly.*;
 
 class MoneyTest {
-    Money money = new Money("Monopoly Money",300);
+    //Money money = new Money("Monopoly Money",300);
     @BeforeEach
     void setUp() {
     }

@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.monopoly.*;
 
 class BankTest {
-    Player player = new Player();
-    Money money = new Money("Monopoly Money",300);
+    //Player player = new Player();
+   // Money money = new Money("Monopoly Money",300);
     @BeforeEach
     void setUp() {
     }

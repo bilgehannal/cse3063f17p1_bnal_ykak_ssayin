@@ -129,7 +129,7 @@ public class Manager {
             System.out.println("Dice are rolled");
         }
         player.rollDice();
-        System.out.println("Dice values: " + player.getDice()[0].getFaceValue() + " - " + player.getDice()[1].getFaceValue());
+        System.out.println("Dice values: " + player.getDice().get(0).getFaceValue() + " - " + player.getDice().get(1).getFaceValue());
 
         int newPosition = updatePositionOf(player);
 

@@ -7,16 +7,15 @@ public class Area extends Block {
     // MARK: Properties
 
     private String name;
-    private Money initialCost;
     private ArrayList<Money> rentPrices;
     private ArrayList<Money> prices;
     private Municipality municipality;
+    private Deed deed;
 
     // CONSTRUCTOR
 
     public Area(String name, Money initialCost) {
         this.name = name;
-        this.initialCost = initialCost;
 
         rentPrices = new ArrayList<Money>();
         prices = new ArrayList<Money>();
@@ -32,14 +31,6 @@ public class Area extends Block {
 
     public String getName() {
         return name;
-    }
-
-    public void setInitialCost(Money initialCost) {
-        this.initialCost = initialCost;
-    }
-
-    public Money getInitialCost() {
-        return initialCost;
     }
 
     public void setRentPrices(ArrayList<Money> rentPrices) {
@@ -64,6 +55,14 @@ public class Area extends Block {
 
     public ArrayList<Money> getPrices() {
         return prices;
+    }
+
+    public void setDeed(Deed deed) {
+        this.deed = deed;
+    }
+
+    public Deed getDeed() {
+        return deed;
     }
 
     // MARK: Utilities
