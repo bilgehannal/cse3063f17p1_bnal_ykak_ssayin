@@ -7,5 +7,3 @@ incomeTax
 Area Beylikduzu 1400000 250000
 Area Besiktas 2800000 380000
 goPrison
-Area Beykoz 2000000 130000
-Area Maltepe 2100000 200000

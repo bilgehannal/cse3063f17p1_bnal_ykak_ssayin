@@ -1,5 +1,7 @@
 package com.monopoly;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -8,7 +10,6 @@ public class Main {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         // getting singleton manager instance once.
         Manager manager = Manager.getInstance();
 
@@ -23,6 +24,8 @@ public class Main {
 
         //Iteration Part
         iterateGame();
+
+        showResult();
 
     }
 
@@ -111,13 +114,8 @@ public class Main {
     public static void showResult() {
         Player winner = Manager.getInstance().getPlayers().get(0);
         for (Player player : Manager.getInstance().getPlayers()) {
-            if(player.getMoney().getAmount() > winner.getMoney().getAmount()) {
-                winner = player;
-            }
-            System.out.println(player.getUsername() + " has " + winner.getMoney());
+            System.out.println(player.getInfo());
         }
-        System.out.println();
-        System.out.println(winner.getUsername() + " wins the game with " + winner.getMoney().toString());
     }
 
     private static void iterateGame() {
@@ -127,6 +125,7 @@ public class Main {
             for (Player player : manager.getPlayers() ) {
                 System.out.println(player.getUsername() + "'s Turn:");
                 manager.play(player);
+                System.out.println(player.getInfo());
 
                 // There is a delay to check the other players' movement
                 try {
@@ -136,8 +135,6 @@ public class Main {
                 }
             }
         }
-
-        showResult();
     }
 
 }
