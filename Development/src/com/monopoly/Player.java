@@ -1,6 +1,7 @@
 package com.monopoly;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Player {
 
@@ -26,12 +27,14 @@ public class Player {
     public Player() {
         String name = Manager.getInstance().getNameFromNameSet();
         this.username = name;
+        dice = new ArrayList<Die>();
         diceInitialize();
         position = new Position(0);
-        money = new Money(Money.Currency.TurkishLira,300);
+        money = new Money(Money.Currency.TurkishLira,3000000);
         this.autoPlay = true;
         this.inJail = false;
         this.inJailTime = 0;
+
 
     }
 
@@ -98,12 +101,15 @@ public class Player {
         this.money.setAmount(newAmount);
     }
 
+    // Pay methods to player and bank
+
     private boolean canPay(Money money){
         if (this.money.getAmount() > money.getAmount()) {
             return true;
         }
         return false;
     }
+
 
     public boolean pay(Money money){
         if (canPay(money)){
@@ -124,6 +130,9 @@ public class Player {
         }
         return false;
     }
+
+
+    // Dice methods
 
     public void rollDice() {
         Random generator = new Random();
@@ -146,5 +155,28 @@ public class Player {
         dice.add(new Die());
         dice.add(new Die());
     }
+
+    // Decisions
+
+    public boolean wantToBuyArea(Area area) {
+        if(this.isAutoPlay()) {
+            int randomNumber = (int)((Math.random()*2) + 1);
+            return (randomNumber == 1) ? true : false; // If randomNumber is 1 then, buy the area
+        } else {
+            Scanner sc = new Scanner(System.in);
+            while(true) {
+                System.out.println("Do you want to buy " + area.getName() + " : y/n");
+                String decision = sc.nextLine().toLowerCase();
+                if(decision.equals("y")) {
+                    return true;
+                } else if(decision.equals("n")) {
+                    return false;
+                }
+                System.out.println("Wrong input, please enter y or n");
+            }
+        }
+
+    }
+
 
 }

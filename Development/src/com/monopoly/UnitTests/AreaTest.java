@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AreaTest {
     Money money = new Money(Money.Currency.TurkishLira,300);
     Money money1 = new Money(Money.Currency.TurkishLira,300);
-    Area area = new Area("AreaName",money);
+    //Area area = new Area("AreaName",money);
     Player player = new Player();
     ArrayList<Money> rentPrices;
     @org.junit.jupiter.api.BeforeEach

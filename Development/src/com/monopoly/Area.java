@@ -7,19 +7,14 @@ public class Area extends Block {
     // MARK: Properties
 
     private String name;
-    private ArrayList<Money> rentPrices;
-    private ArrayList<Money> prices;
     private Municipality municipality;
     private Deed deed;
 
     // CONSTRUCTOR
 
-    public Area(String name, Money initialCost) {
+    public Area(String name, Deed deed) {
         this.name = name;
-
-        rentPrices = new ArrayList<Money>();
-        prices = new ArrayList<Money>();
-
+        this.deed = deed;
     }
 
     //MARK: Encapsulation
@@ -33,28 +28,12 @@ public class Area extends Block {
         return name;
     }
 
-    public void setRentPrices(ArrayList<Money> rentPrices) {
-        this.rentPrices = rentPrices;
-    }
-
     public void setMunicipality(Municipality municipality) {
         this.municipality = municipality;
     }
 
     public Municipality getMunicipality() {
         return municipality;
-    }
-
-    public ArrayList<Money> getRentPrices() {
-        return rentPrices;
-    }
-
-    public void setPrices(ArrayList<Money> prices) {
-        this.prices = prices;
-    }
-
-    public ArrayList<Money> getPrices() {
-        return prices;
     }
 
     public void setDeed(Deed deed) {
@@ -69,17 +48,22 @@ public class Area extends Block {
 
     @Override
     public void interact(Player player) {
-        player.pay(getTotalRent());
-        System.out.println(getTotalRent().toString() + " is paid to the Bank at " + this.name);
+
+        if(deed.getOwner() == null) {
+            if(player.wantToBuyArea(this)) {
+                player.pay(deed.getPrice());
+                deed.setOwner(player);
+                System.out.println(name + " is bought by " + player.getUsername());
+            }
+        } else {
+            player.pay(deed.getOwner(), getTotalRent());
+            System.out.println(player.getUsername() + " paid " + getTotalRent() + " to " + deed.getOwner().getUsername() + " for rent");
+        }
     }
 
     // getTotalRent calculates the total rent value as a money and returns.
     public Money getTotalRent() {
-        double totalAmountOfMoney = 0;
-        for (Money rent : rentPrices) {
-            totalAmountOfMoney += rent.getAmount();
-        }
-        return new Money(Money.Currency.TurkishLira,totalAmountOfMoney);
+        return deed.getRentPrice();
     }
 
 

@@ -22,7 +22,7 @@ public abstract class RevenueTax extends Block {
     @Override
     public void interact(Player player) {
         Money taxAmount = payTax(player);
-        System.out.println(taxAmount.toString() + " is paid to the Bank at RevenueTax Block.");
+        System.out.println(taxAmount.toString() + " is paid to the Bank at Revenue Block.");
     }
 
     public abstract Money payTax(Player player);

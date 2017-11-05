@@ -151,6 +151,7 @@ public class Manager {
         // handle paying money at each turn of the board
         if (newPositionIndex < previousPositionIndex) {
             Bank.getInstance().pay(player,new Money(Money.Currency.TurkishLira,moneyAmountPerTurnOfBoard));
+            System.out.println(moneyAmountPerTurnOfBoard + " is paid to " + player.getUsername() + "because of s/he passed from starter");
         }
 
         player.getPosition().setIndex(newPositionIndex);
