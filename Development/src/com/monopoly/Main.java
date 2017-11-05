@@ -9,7 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        final long delayTime = 500;
+        // getting singleton manager instance once.
+        Manager manager = Manager.getInstance();
 
         initializeGame(); //initialize players and board.
         clearConsole();
@@ -17,26 +18,11 @@ public class Main {
         determineIterations(); // How many iteration will be done?
         clearConsole();
 
-        Manager.getInstance().reorderPlayers(Manager.getInstance().getPlayers()); // Ordering players
+        manager.reorderPlayers(Manager.getInstance().getPlayers()); // Ordering players
         printPlayerDiceInfo();
 
         //Iteration Part
-        for(int i=0; i<Manager.getInstance().getMaxNumberOfIterations(); i++) {
-            for (Player player : Manager.getInstance().getPlayers() ) {
-                System.out.println(player.getUsername() + "'s Turn:");
-                Manager.getInstance().play(player);
-
-                // There is a delay to check the other players' movement
-                try {
-                    TimeUnit.MILLISECONDS.sleep(delayTime);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        showResult();
-
+        iterateGame();
 
     }
 
@@ -113,7 +99,8 @@ public class Main {
     private static void printPlayerDiceInfo() {
         System.out.println("Order of Players: ");
         for (Player player : Manager.getInstance().getPlayers()) {
-            System.out.println(player.getUsername() + "   Dice: " + player.getDice().get(0).getFaceValue() + " - " + player.getDice().get(1).getFaceValue());
+            System.out.println(player.getUsername() + "   Dice: " + player.getDice().get(0).getFaceValue()
+                    + " - " + player.getDice().get(1).getFaceValue());
         }
     }
 
@@ -130,7 +117,27 @@ public class Main {
             System.out.println(player.getUsername() + " has " + winner.getMoney());
         }
         System.out.println();
-        System.out.println(winner.getUsername() + " wins the game with " + winner.getMoney());
+        System.out.println(winner.getUsername() + " wins the game with " + winner.getMoney().toString());
+    }
+
+    private static void iterateGame() {
+        final long delayTime = 500;
+        Manager manager = Manager.getInstance();
+        for(int i=0; i<manager.getMaxNumberOfIterations(); i++) {
+            for (Player player : manager.getPlayers() ) {
+                System.out.println(player.getUsername() + "'s Turn:");
+                manager.play(player);
+
+                // There is a delay to check the other players' movement
+                try {
+                    TimeUnit.MILLISECONDS.sleep(delayTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        showResult();
     }
 
 }

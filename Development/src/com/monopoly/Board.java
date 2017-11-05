@@ -23,7 +23,7 @@ public class Board {
         blocks.add(new Area("Uskudar",  new Deed(new Money(Money.Currency.TurkishLira,604),
                 new Money(Money.Currency.TurkishLira,98))));
 
-        blocks.add(new Area("Besiltas",  new Deed(new Money(Money.Currency.TurkishLira,458),
+        blocks.add(new Area("Besiktas",  new Deed(new Money(Money.Currency.TurkishLira,458),
                 new Money(Money.Currency.TurkishLira,14))));
 
         blocks.add(new Area("Beylikduzu",  new Deed(new Money(Money.Currency.TurkishLira,654),

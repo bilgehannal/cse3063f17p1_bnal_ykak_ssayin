@@ -7,10 +7,13 @@ public class Bank {
     private static Bank sharedBank;
     private Money money;
 
+    // MARK: Constants
+    private final int initialBankMoney = 100000000;
+
     // MARK: Constructors
     protected Bank() {
         // Assuming all money over the game is limited with 100M ₺.
-        money = new Money(Money.Currency.TurkishLira,100000000);
+        money = new Money(Money.Currency.TurkishLira,initialBankMoney);
     }
 
     public static Bank getInstance() {
