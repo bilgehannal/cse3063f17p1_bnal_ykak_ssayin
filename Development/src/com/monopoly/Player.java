@@ -26,8 +26,8 @@ public class Player {
         this.autoPlay = false;
         this.inJail = false;
         this.inJailTime = 0;
-
     }
+
     public Player() {
         String name = Manager.getInstance().getNameFromNameSet();
         this.username = name;
@@ -38,8 +38,6 @@ public class Player {
         this.autoPlay = true;
         this.inJail = false;
         this.inJailTime = 0;
-
-
     }
 
     // MARK: Encapsulation
@@ -180,6 +178,12 @@ public class Player {
             }
         }
 
+    }
+
+    public String getInfo() {
+        String result = "";
+        result += "Name: " + username + " -> money: " + money;
+        return result;
     }
 
 
