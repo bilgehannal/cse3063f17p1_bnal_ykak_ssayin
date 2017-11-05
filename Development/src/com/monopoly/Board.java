@@ -14,6 +14,7 @@ public class Board {
     public Board() {
 
         blocks = new ArrayList<Block>();
+        blocks.add(new Beginning());
 
         blocks.add(new Area("Kadikoy",  new Deed(new Money(Money.Currency.TurkishLira,220),
                 new Money(Money.Currency.TurkishLira,64))));
@@ -39,6 +40,7 @@ public class Board {
         blocks.add(new IncomeTax());
         blocks.add(new GoPrison(new Money(Money.Currency.TurkishLira,50000)));
         blocks.add(new VisitPrison());
+        blocks.add(new FreeParking());
     }
 
     // MARK: Encapsulation

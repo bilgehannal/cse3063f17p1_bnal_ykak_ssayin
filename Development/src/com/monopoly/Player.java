@@ -14,6 +14,7 @@ public class Player {
     private ArrayList<Die> dice;
     private boolean autoPlay;
     private boolean inJail;
+    private boolean hasRentExemption;
     private int inJailTime;
 
     // MARK: Constants
@@ -38,7 +39,7 @@ public class Player {
         this.autoPlay = true;
         this.inJail = false;
         this.inJailTime = 0;
-
+        this.hasRentExemption = false;
 
     }
 
@@ -97,6 +98,14 @@ public class Player {
 
     public void setInJailTime(int inJailTime) {
         this.inJailTime = inJailTime;
+    }
+
+    public boolean getHasRentExemption() {
+        return this.hasRentExemption;
+    }
+
+    public void setHasRentExemption(boolean hasRentExemption) {
+        this.hasRentExemption = hasRentExemption;
     }
 
     // MARK: Utility Methods

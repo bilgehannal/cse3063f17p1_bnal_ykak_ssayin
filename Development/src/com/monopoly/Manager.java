@@ -24,7 +24,7 @@ public class Manager {
 
     protected Manager() {
         // Initialization
-        players = new ArrayList<Player>();
+        players = new ArrayList<>();
     }
 
     public static Manager getInstance() {
@@ -84,6 +84,10 @@ public class Manager {
         return maxNumberOfIterations;
     }
 
+    public String getMoneyAmountPerTurnOfBoard() {
+        return new Money(Money.Currency.TurkishLira,this.moneyAmountPerTurnOfBoard).toString();
+    }
+
     // MARK: Utility Methods
 
     public void addPlayer(Player player){
@@ -111,14 +115,6 @@ public class Manager {
         Collections.reverse(players);
     }
 
-    public void printGameInfo(Player player) {
-
-    }
-
-    public void printGameInfo() {
-
-    }
-
     public void play(Player player) {
 
         Scanner sc = new Scanner(System.in);
@@ -129,7 +125,8 @@ public class Manager {
             System.out.println("Dice are rolled");
         }
         player.rollDice();
-        System.out.println("Dice values: " + player.getDice().get(0).getFaceValue() + " - " + player.getDice().get(1).getFaceValue());
+        System.out.println("Dice values: " + player.getDice().get(0).getFaceValue() + " - "
+                + player.getDice().get(1).getFaceValue());
 
         int newPosition = updatePositionOf(player);
 
@@ -150,8 +147,10 @@ public class Manager {
 
         // handle paying money at each turn of the board
         if (newPositionIndex < previousPositionIndex) {
-            Bank.getInstance().pay(player,new Money(Money.Currency.TurkishLira,moneyAmountPerTurnOfBoard));
-            System.out.println(moneyAmountPerTurnOfBoard + " is paid to " + player.getUsername() + " since s/he has completed a turn in board.");
+            Money money = new Money(Money.Currency.TurkishLira,moneyAmountPerTurnOfBoard);
+            Bank.getInstance().pay(player,money);
+            System.out.println(money.toString() + " is paid to " + player.getUsername()
+                    + " since s/he has completed a turn in board.");
         }
 
         player.getPosition().setIndex(newPositionIndex);

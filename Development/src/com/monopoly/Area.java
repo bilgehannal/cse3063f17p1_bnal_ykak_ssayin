@@ -1,7 +1,5 @@
 package com.monopoly;
 
-import java.util.ArrayList;
-
 public class Area extends Block {
 
     // MARK: Properties
@@ -56,8 +54,14 @@ public class Area extends Block {
                 System.out.println(name + " is bought by " + player.getUsername());
             }
         } else {
-            player.pay(deed.getOwner(), getTotalRent());
-            System.out.println(player.getUsername() + " paid " + getTotalRent() + " to " + deed.getOwner().getUsername() + " for rent");
+            if (player.getHasRentExemption()) {
+                System.out.println(player.getUsername() + " has rent exemption. So s/he pays nothing this time.");
+                player.setHasRentExemption(false);
+            }else {
+                player.pay(deed.getOwner(), getTotalRent());
+                System.out.println(player.getUsername() + " paid "
+                        + getTotalRent() + " to " + deed.getOwner().getUsername() + " for rent.");
+            }
         }
     }
 
