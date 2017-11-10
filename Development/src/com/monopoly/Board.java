@@ -1,7 +1,4 @@
 package com.monopoly;
-
-import jdk.nashorn.internal.ir.BlockLexicalContext;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -32,7 +29,6 @@ public class Board {
     }
 
     // MARK: Encapsulation
-
 
     public void setBoardName(String boardName) {
         this.boardName = boardName;

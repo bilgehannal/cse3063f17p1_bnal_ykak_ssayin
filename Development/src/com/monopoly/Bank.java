@@ -8,7 +8,7 @@ public class Bank {
     private Money money;
 
     // MARK: Constants
-    private final int initialBankMoney = 100000000;
+    private final double initialBankMoney = 100000000;
 
     // MARK: Constructors
     protected Bank() {

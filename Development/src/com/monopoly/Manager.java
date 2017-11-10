@@ -20,7 +20,7 @@ public class Manager {
     private String nameSet[] = {"Doc","Grumpy","Happy","Sleepy","Dopey","Bashful","Sneezy"};
 
     // MARK: Constants
-    private final int moneyAmountPerTurnOfBoard = 2000000;
+    private final double moneyAmountPerTurnOfBoard = 2000000;
 
     protected Manager() {
         // Initialization

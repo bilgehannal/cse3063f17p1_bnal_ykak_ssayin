@@ -3,18 +3,15 @@ package com.monopoly;
 public class GoPrison extends Block {
 
     //MARK: Properties
-
     private Money penance;
 
     // MARK: Constructor
-
     public GoPrison(Money penance) {
         this.penance = penance;
-        penance.setAmount(50000);
+        penance.setAmount(5000000);
     }
 
     //MARK: Encapsulation
-
     public void setPenance(Money penance) {
         this.penance = penance;
     }
@@ -28,6 +25,7 @@ public class GoPrison extends Block {
         System.out.println(player.getUsername() + " came into Prison Block");
         if(player.pay(penance)) {
             System.out.println(player.getUsername() + " paid tax:" + penance );
+            player.setInJail(false);
         } else {
             player.setInJail(true);
             player.setInJailTime(player.getInJailTime()+1);

@@ -18,7 +18,7 @@ public class Player {
     private int inJailTime;
 
     // MARK: Constants
-    private final int initialMoney = 2000000;
+    private final double initialMoney = 2000000;
 
     // MARK: Constructor
     public Player(String username) {
@@ -83,7 +83,7 @@ public class Player {
         return autoPlay;
     }
 
-    public boolean isInJail() {
+    public boolean getisInJail() {
         return inJail;
     }
 
@@ -127,8 +127,6 @@ public class Player {
         if (canPay(money)){
             double newAmount = this.money.getAmount() - money.getAmount();
             this.money.setAmount(newAmount);
-            double currentBankAmount = Bank.getInstance().getMoney().getAmount();
-            Bank.getInstance().getMoney().setAmount(currentBankAmount + money.getAmount());
             return true;
         }
         return false;
