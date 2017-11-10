@@ -23,6 +23,7 @@ public class Player {
     // MARK: Constructor
     public Player(String username) {
         this();
+        position = new Position(0);
         this.username = username;
         this.autoPlay = false;
         this.inJail = false;

@@ -1,10 +1,15 @@
 package com.monopoly.UnitTest;
 
+import com.monopoly.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class LuxuryTaxTest {
+    Player player = new Player();
+    LuxuryTax luxuryTax = new LuxuryTax();
     @BeforeEach
     void setUp() {
     }
@@ -15,34 +20,13 @@ class LuxuryTaxTest {
 
     @Test
     void payTax() {
+        double initialMoney = player.getMoney().getAmount();
+        double bankInitial = Bank.getInstance().getMoney().getAmount();
+        double taxAmount = 75;
+        luxuryTax.payTax(player);
+        assertEquals(initialMoney-taxAmount,player.getMoney().getAmount());
+        assertEquals(bankInitial+taxAmount,Bank.getInstance().getMoney().getAmount());
     }
 
-    @Test
-    void setTaxAmount() {
-    }
-
-    @Test
-    void getTaxAmount() {
-    }
-
-    @Test
-    void interact() {
-    }
-
-    @Test
-    void payTax1() {
-    }
-
-    @Test
-    void setID() {
-    }
-
-    @Test
-    void getID() {
-    }
-
-    @Test
-    void interact1() {
-    }
 
 }

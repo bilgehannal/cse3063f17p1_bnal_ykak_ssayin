@@ -8,7 +8,6 @@ public class GoPrison extends Block {
     // MARK: Constructor
     public GoPrison(Money penance) {
         this.penance = penance;
-        penance.setAmount(5000000);
     }
 
     //MARK: Encapsulation

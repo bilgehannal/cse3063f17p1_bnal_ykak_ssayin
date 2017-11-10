@@ -26,9 +26,11 @@ class GoPrisonTest {
         prison.interact(player);
         assertTrue(player.getisInJail() == false);
         // Check for not enough money.
+        int initialInPrisonTime = player.getInJailTime();
         prison.setPenance(highPenance);
         prison.interact(player);
         assertTrue(player.getisInJail() == true);
+        assertEquals(initialInPrisonTime+1,player.getInJailTime());
     }
 
 }

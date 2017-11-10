@@ -72,6 +72,14 @@ public class Manager {
         return newName;
     }
 
+    public void setCurrentIteration(int currentIteration) {
+        this.currentIteration = currentIteration;
+    }
+
+    public int getCurrentIteration() {
+        return currentIteration;
+    }
+
     public void setWinner(Player winner) {
         this.winner = winner;
     }
