@@ -49,18 +49,28 @@ public class Area extends Block {
 
         if(deed.getOwner() == null) {
             if(player.wantToBuyArea(this)) {
-                player.pay(deed.getPrice());
-                deed.setOwner(player);
-                System.out.println(name + " is bought by " + player.getUsername());
+                if(player.pay(deed.getPrice())) {
+                    deed.setOwner(player);
+                    System.out.println(name + " is bought by " + player.getUsername());
+                } else {
+                    player.setBankrupt(true);
+                }
             }
         } else {
             if (player.getHasRentExemption()) {
                 System.out.println(player.getUsername() + " has rent exemption. So s/he pays nothing this time.");
                 player.setHasRentExemption(false);
             }else {
-                player.pay(deed.getOwner(), getTotalRent());
-                System.out.println(player.getUsername() + " paid "
-                        + getTotalRent() + " to " + deed.getOwner().getUsername() + " for rent.");
+                if(player.pay(deed.getOwner(), getTotalRent())) {
+                    System.out.println(player.getUsername() + " paid "
+                            + getTotalRent() + " to " + deed.getOwner().getUsername() + " for rent.");
+                } else {
+                    if(deed.getOwner() != player) {
+                        player.setBankrupt(true);
+                    }
+                }
+
+
             }
         }
     }

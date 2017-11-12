@@ -86,6 +86,8 @@ public class Board {
             block = new GoPrison(new Money(Money.Currency.TurkishLira,50000));
         } else if(words[0].toLowerCase().contains("visitprison")) {
             block = new VisitPrison();
+        } else if(words[0].toLowerCase().contains("beginning")) {
+            block = new Beginning();
         }
 
         return block;

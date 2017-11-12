@@ -17,6 +17,7 @@ public class Player {
     private boolean inJail;
     private boolean hasRentExemption;
     private int inJailTime;
+    private boolean isBankrupt;
     // MARK: Constants
     private final double initialMoney = 2000000;
 
@@ -41,6 +42,7 @@ public class Player {
         this.inJail = false;
         this.inJailTime = 0;
         this.hasRentExemption = false;
+        this.isBankrupt = false;
     }
 
     // MARK: Encapsulation
@@ -108,6 +110,16 @@ public class Player {
         this.hasRentExemption = hasRentExemption;
     }
 
+    public boolean isBankrupt() {
+        return isBankrupt;
+    }
+
+    public void setBankrupt(boolean bankrupt) {
+        if(bankrupt) {
+            getMoney().setAmount(0); // When the player is bankrupted then s/he has 0 money.
+        }
+        isBankrupt = bankrupt;
+    }
 
     // MARK: Utility Methods
     public void addMoney(Money money) {
@@ -135,7 +147,8 @@ public class Player {
     }
 
     public boolean pay(Player player, Money money) {
-        if(canPay(money)) {
+
+        if(canPay(money) && player != this) {
             player.getMoney().setAmount(player.getMoney().getAmount() + money.getAmount());
             this.money.setAmount(this.money.getAmount() - money.getAmount());
             return true;
@@ -172,6 +185,11 @@ public class Player {
     // Decisions
 
     public boolean wantToBuyArea(Area area) {
+        // If the player doesn't have enough money return false
+        if(this.getMoney().getAmount() < area.getDeed().getPrice().getAmount()) {
+            return false;
+        }
+        // AI and real player control to buy the area
         if(this.isAutoPlay()) {
             int randomNumber = (int)((Math.random()*2) + 1);
             return (randomNumber == 1) ? true : false; // If randomNumber is 1 then, buy the area
@@ -194,6 +212,7 @@ public class Player {
     public String getInfo() {
         String result = "";
         result += "Name: " + username + " -> money: " + money;
+        result += "\nThe player was bankrupted!";
         return result;
     }
 

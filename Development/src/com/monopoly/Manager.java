@@ -110,11 +110,6 @@ public class Manager {
         this.currentIteration++;
     }
 
-    public Position move(Player player,int amount) {
-        Position position = new Position(1);
-        return position;
-    }
-
     public void reorderPlayers(ArrayList<Player> players){
         for (Player player : players) {
             player.rollDice();
