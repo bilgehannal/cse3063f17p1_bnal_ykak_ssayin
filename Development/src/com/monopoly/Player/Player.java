@@ -247,7 +247,9 @@ public class Player {
     public String getInfo() {
         String result = "";
         result += "Name: " + username + " -> money: " + money;
-        result += "\nThe player was bankrupted!";
+        if(this.isBankrupt()) {
+            result += "\nThe player was bankrupted!";
+        }
         return result;
     }
 

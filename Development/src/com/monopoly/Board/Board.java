@@ -97,6 +97,9 @@ public class Board {
         } else if(words[0].toLowerCase().contains("beginning")) {
             block = new Beginning();
         }
+        else if(words[0].toLowerCase().contains("freeparking")) {
+            block = new FreeParking();
+        }
 
         return block;
     }
