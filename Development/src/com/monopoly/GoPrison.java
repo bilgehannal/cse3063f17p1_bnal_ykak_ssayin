@@ -3,7 +3,7 @@ package com.monopoly;
 public class GoPrison extends Block {
 
     //MARK: Properties
-    private Money penance;
+    private static Money penance;
 
     // MARK: Constructor
     public GoPrison(Money penance) {
@@ -11,11 +11,11 @@ public class GoPrison extends Block {
     }
 
     //MARK: Encapsulation
-    public void setPenance(Money penance) {
-        this.penance = penance;
+    public static void setPenance(Money newPenance) {
+        penance = newPenance;
     }
 
-    public Money getPenance() {
+    public static Money getPenance() {
         return penance;
     }
 

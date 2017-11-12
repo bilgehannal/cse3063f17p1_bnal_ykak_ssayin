@@ -1,5 +1,6 @@
 package com.monopoly;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,12 +13,13 @@ public class Player {
     private Money money;
     private ArrayList<Area> ownedAreas;
     private ArrayList<Die> dice;
-    int[] faceValues = new int[5];
+    boolean[] lastThreeDoubles = new boolean[3];
     private boolean autoPlay;
     private boolean inJail;
     private boolean hasRentExemption;
     private int inJailTime;
     private boolean isBankrupt;
+    private int doublesCounter;
     // MARK: Constants
     private final double initialMoney = 2000000;
 
@@ -27,8 +29,6 @@ public class Player {
         position = new Position(0);
         this.username = username;
         this.autoPlay = false;
-        this.inJail = false;
-        this.inJailTime = 0;
     }
 
     public Player() {
@@ -43,6 +43,8 @@ public class Player {
         this.inJailTime = 0;
         this.hasRentExemption = false;
         this.isBankrupt = false;
+        this.doublesCounter = 0;
+        Arrays.fill(this.lastThreeDoubles, Boolean.FALSE);
     }
 
     // MARK: Encapsulation
@@ -114,6 +116,22 @@ public class Player {
         return isBankrupt;
     }
 
+    public void setDoublesCounter(int doublesCounter) {
+        this.doublesCounter = doublesCounter;
+    }
+
+    public int getDoublesCounter() {
+        return doublesCounter;
+    }
+
+    public void setLastThreeDoubles(boolean[] lasThreeDoubles) {
+        this.lastThreeDoubles = lasThreeDoubles;
+    }
+
+    public boolean[] getLastThreeDoubles() {
+        return lastThreeDoubles;
+    }
+
     public void setBankrupt(boolean bankrupt) {
         if(bankrupt) {
             getMoney().setAmount(0); // When the player is bankrupted then s/he has 0 money.
@@ -166,7 +184,14 @@ public class Player {
             int newFaceValue = generator.nextInt(6)+1;
             dice.get(i).setFaceValue(newFaceValue);
         }
+
         Manager.getInstance().checkForDouble(this);
+    }
+    public void rotateDoublesArray(boolean value){
+        for (int i = 0; i <this.lastThreeDoubles.length-1 ; i++) {
+            this.lastThreeDoubles[i] = this.lastThreeDoubles[i+1];
+        }
+        this.lastThreeDoubles[lastThreeDoubles.length-1] = value;
     }
 
     public int getTotalDiceValue() {

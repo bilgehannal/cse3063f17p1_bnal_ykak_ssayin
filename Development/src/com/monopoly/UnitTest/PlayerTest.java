@@ -38,8 +38,6 @@ class PlayerTest {
         player.rollDice();
         int faceValue = player.getDice().get(1).getFaceValue();
         assertTrue(faceValue>=1 && faceValue<=6);
-        boolean interval2 = 0 < player.getTotalDiceValue() || player.getTotalDiceValue()>=12;
-        assertTrue(interval2);
     }
 
     @Test

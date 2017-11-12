@@ -118,7 +118,7 @@ public class Manager {
         Collections.reverse(players);
     }
 
-    public void play(Player player) {
+    public boolean play(Player player) {
 
         Scanner sc = new Scanner(System.in);
         if (player.getisInJail() == false) {
@@ -131,25 +131,44 @@ public class Manager {
             player.rollDice();
             System.out.println("Dice values: " + player.getDice().get(0).getFaceValue() + " - "
                     + player.getDice().get(1).getFaceValue());
+            player.rotateDoublesArray(checkForDouble(player));
+            if (isDoublesThree(player)){
+                player.setInJail(true);
+                // position
+            }
+            else {
+                int newPosition = updatePositionOf(player);
 
-            int newPosition = updatePositionOf(player);
+                Block currentBlock = getBoard().getBlocks().get(player.getPosition().getIndex());
+                System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
+                System.out.println("Index of Block: " + newPosition);
 
-            Block currentBlock = getBoard().getBlocks().get(player.getPosition().getIndex());
-            System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
-            System.out.println("Index of Block: " + newPosition);
+                currentBlock.interact(player);
 
-            currentBlock.interact(player);
-
-            System.out.println();
+                System.out.println();
+            }
         }
         else{
             if (player.getInJailTime() == 3){
                 System.out.println(player.getUsername() + "is out of jail");
                 player.setInJail(false);
             }
-            System.out.println(player.getUsername() + " is in jail");
-            player.setInJailTime(player.getInJailTime() + 1);
+            else {
+                if (player.pay(GoPrison.getPenance())) {
+                    player.setInJail(false);
+                } else {
+                    player.rollDice();
+                    if (checkForDouble(player)) {
+                        player.setInJail(false);
+                        System.out.println(player.getUsername() + "is out of jail");
+                    } else {
+                        System.out.println(player.getUsername() + " is in jail");
+                        player.setInJailTime(player.getInJailTime() + 1);
+                    }
+                }
+            }
         }
+        return Manager.getInstance().checkForDouble(player);
     }
 
     private int updatePositionOf(Player player) {
@@ -157,7 +176,7 @@ public class Manager {
         int newPositionIndex = (player.getPosition().getIndex() + player.getTotalDiceValue()) % numberOfBlock;
         int previousPositionIndex = player.getPosition().getIndex();
 
-        // handle paying money at each turn of the board
+        // Handle paying money at each turn of the board
         if (newPositionIndex < previousPositionIndex) {
             Money money = new Money(Money.Currency.TurkishLira,moneyAmountPerTurnOfBoard);
             Bank.getInstance().pay(player,money);
@@ -168,11 +187,20 @@ public class Manager {
         player.getPosition().setIndex(newPositionIndex);
         return newPositionIndex;
     }
-    public void checkForDouble(Player player){
-        int doublesCounter = 0;
-        if (doublesCounter == 3){
-            player.setInJail(true);
-            System.out.println(player.getUsername() + "rolled doubles three times in a row, is going to jail for three rounds");
+    public boolean checkForDouble(Player player){
+        int firstValue = player.getDice().get(0).getFaceValue();
+        int secondValue = player.getDice().get(1).getFaceValue();
+        if (firstValue == secondValue){
+            return true;
         }
+        return false;
     }
+    public boolean isDoublesThree(Player player){
+        for (boolean value:player.getLastThreeDoubles()) {
+            if (value == false)
+                return false;
+        }
+        return true;
+    }
+
 }

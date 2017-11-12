@@ -139,7 +139,8 @@ public class Main {
                         break;
                     }
                     System.out.println(player.getUsername() + "'s Turn:");
-                    manager.play(player);
+
+                    while(manager.play(player)){ }
                     System.out.println(player.getInfo());
 
                     // There is a delay to check the other players' movement
