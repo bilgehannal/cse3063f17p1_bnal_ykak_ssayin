@@ -119,21 +119,36 @@ public class Main {
         System.out.println("----------------------\nThe winner of the game\n----------------------\n" + winner.getInfo());
     }
 
+    private static int getNumberOfActivePlayer() {
+        int numberOfActivePlayer = 0;
+        for (Player player : Manager.getInstance().getPlayers() ) {
+            if(!player.isBankrupt()){
+                numberOfActivePlayer++;
+            }
+        }
+    }
+
     private static void iterateGame() {
         final long delayTime = 500;
         Manager manager = Manager.getInstance();
         for(int i=0; i<manager.getMaxNumberOfIterations(); i++) {
             for (Player player : manager.getPlayers() ) {
-                System.out.println(player.getUsername() + "'s Turn:");
-                manager.play(player);
-                System.out.println(player.getInfo());
+                if(!player.isBankrupt()) {
+                    if(getNumberOfActivePlayer() <= 1) {
+                        break;
+                    }
+                    System.out.println(player.getUsername() + "'s Turn:");
+                    manager.play(player);
+                    System.out.println(player.getInfo());
 
-                // There is a delay to check the other players' movement
-                try {
-                    TimeUnit.MILLISECONDS.sleep(delayTime);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    // There is a delay to check the other players' movement
+                    try {
+                        TimeUnit.MILLISECONDS.sleep(delayTime);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
+
             }
         }
     }
