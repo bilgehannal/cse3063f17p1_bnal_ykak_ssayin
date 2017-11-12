@@ -53,13 +53,6 @@ class PlayerTest {
 
     @Test
     void getTotalDiceValue() {
-        dice.setFaceValue(3);
-        dice1.setFaceValue(6);
-        diceArray[0]=dice;
-        diceArray[1]=dice1;
-        player.getDice().add(diceArray[0]);
-        player.getDice().add(diceArray[1]);
-        assertEquals(dice.getFaceValue()+dice1.getFaceValue(),player.getTotalDiceValue());
 
     }
 

@@ -12,11 +12,11 @@ public class Player {
     private Money money;
     private ArrayList<Area> ownedAreas;
     private ArrayList<Die> dice;
+    int[] faceValues = new int[5];
     private boolean autoPlay;
     private boolean inJail;
     private boolean hasRentExemption;
     private int inJailTime;
-
     // MARK: Constants
     private final double initialMoney = 2000000;
 
@@ -108,6 +108,7 @@ public class Player {
         this.hasRentExemption = hasRentExemption;
     }
 
+
     // MARK: Utility Methods
     public void addMoney(Money money) {
         double newAmount = this.money.getAmount() + money.getAmount();
@@ -152,6 +153,7 @@ public class Player {
             int newFaceValue = generator.nextInt(6)+1;
             dice.get(i).setFaceValue(newFaceValue);
         }
+        Manager.getInstance().checkForDouble(this);
     }
 
     public int getTotalDiceValue() {

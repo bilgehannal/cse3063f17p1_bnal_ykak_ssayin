@@ -126,26 +126,35 @@ public class Manager {
     public void play(Player player) {
 
         Scanner sc = new Scanner(System.in);
-        if (!player.isAutoPlay()) {
-            System.out.println("Please press any key to roll the dice");
-            sc.nextLine();
-        } else {
-            System.out.println("Dice are rolled");
+        if (player.getisInJail() == false) {
+            if (!player.isAutoPlay()) {
+                System.out.println("Please press any key to roll the dice");
+                sc.nextLine();
+            } else {
+                System.out.println("Dice are rolled");
+            }
+            player.rollDice();
+            System.out.println("Dice values: " + player.getDice().get(0).getFaceValue() + " - "
+                    + player.getDice().get(1).getFaceValue());
+
+            int newPosition = updatePositionOf(player);
+
+            Block currentBlock = getBoard().getBlocks().get(player.getPosition().getIndex());
+            System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
+            System.out.println("Index of Block: " + newPosition);
+
+            currentBlock.interact(player);
+
+            System.out.println();
         }
-        player.rollDice();
-        System.out.println("Dice values: " + player.getDice().get(0).getFaceValue() + " - "
-                + player.getDice().get(1).getFaceValue());
-
-        int newPosition = updatePositionOf(player);
-
-        Block currentBlock = getBoard().getBlocks().get(player.getPosition().getIndex());
-        System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
-        System.out.println("Index of Block: " + newPosition);
-
-        currentBlock.interact(player);
-
-        System.out.println();
-
+        else{
+            if (player.getInJailTime() == 3){
+                System.out.println(player.getUsername() + "is out of jail");
+                player.setInJail(false);
+            }
+            System.out.println(player.getUsername() + " is in jail");
+            player.setInJailTime(player.getInJailTime() + 1);
+        }
     }
 
     private int updatePositionOf(Player player) {
@@ -163,5 +172,12 @@ public class Manager {
 
         player.getPosition().setIndex(newPositionIndex);
         return newPositionIndex;
+    }
+    public void checkForDouble(Player player){
+        int doublesCounter = 0;
+        if (doublesCounter == 3){
+            player.setInJail(true);
+            System.out.println(player.getUsername() + "rolled doubles three times in a row, is going to jail for three rounds");
+        }
     }
 }
