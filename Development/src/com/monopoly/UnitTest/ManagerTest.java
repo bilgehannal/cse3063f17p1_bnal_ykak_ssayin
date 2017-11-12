@@ -7,21 +7,22 @@ import org.junit.jupiter.api.Test;
 
 import com.monopoly.*;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ManagerTest {
-    Player player1 = new Player();
-    Player player2 = new Player();
-    Player player3 = new Player();
-    Player player4 = new Player();
+    Player player = new Player();
     Position pos = new Position(1);
-    private ArrayList<Player> players;
     String nameSet[] = {"Doc","Grumpy","Happy","Sleepy","Dopey","Bashful","Sneezy"};
+    @BeforeEach
+    void setUp() {
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
     @Test
     void getInstance() {
-        assertEquals(Manager.getInstance(),Manager.getInstance());
     }
 
     @Test
@@ -56,9 +57,14 @@ class ManagerTest {
         assertTrue(Manager.getInstance().canMoveNextIteration() == false);
     }
     @Test
+    void move() {
+        //int initialIndex = player.getPosition().getIndex();
+        //int finalIndex = Manager.getInstance().move(player,5).getIndex();
+        //assertEquals(initialIndex+5,finalIndex);
+    }
+
+    @Test
     void reorderPlayers() {
-
-
     }
 
     @Test

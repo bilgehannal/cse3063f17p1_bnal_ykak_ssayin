@@ -126,6 +126,7 @@ public class Main {
                 numberOfActivePlayer++;
             }
         }
+        return numberOfActivePlayer;
     }
 
     private static void iterateGame() {

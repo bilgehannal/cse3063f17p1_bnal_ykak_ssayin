@@ -6,7 +6,7 @@ public class Position {
     private int index;
 
     // MARK: Constructor
-    public Position(int index) {
+    public  Position(int index) {
         this.index = index;
     }
 
