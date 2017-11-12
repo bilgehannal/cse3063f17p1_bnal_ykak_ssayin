@@ -116,6 +116,7 @@ public class Main {
         for (Player player : Manager.getInstance().getPlayers()) {
             System.out.println(player.getInfo());
         }
+        System.out.println("----------------------\nThe winner of the game\n----------------------\n" + winner.getInfo());
     }
 
     private static void iterateGame() {
