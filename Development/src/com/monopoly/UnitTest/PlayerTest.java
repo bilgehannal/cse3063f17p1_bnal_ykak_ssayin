@@ -10,17 +10,6 @@ class PlayerTest {
     Money money = new Money(Money.Currency.TurkishLira,100);
     Player player = new Player();
     Player player2 = new Player();
-    Die dice = new Die();
-    Die dice1 = new Die();
-    Die diceArray[] = new Die[2];
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
     @Test
     void addMoney() {
         double initialMoney = player.getMoney().getAmount();
@@ -47,12 +36,17 @@ class PlayerTest {
     void rollDice() {
         // We need to check for each faceValue too.
         player.rollDice();
+        int faceValue = player.getDice().get(1).getFaceValue();
+        assertTrue(faceValue>=1 && faceValue<=6);
         boolean interval2 = 0 < player.getTotalDiceValue() || player.getTotalDiceValue()>=12;
         assertTrue(interval2);
     }
 
     @Test
     void getTotalDiceValue() {
+        player2.rollDice();
+        int totalValue = player2.getDice().get(1).getFaceValue() + player2.getDice().get(0).getFaceValue();
+        assertEquals(totalValue,player2.getTotalDiceValue());
 
     }
 

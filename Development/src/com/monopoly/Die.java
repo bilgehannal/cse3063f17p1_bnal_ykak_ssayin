@@ -16,6 +16,7 @@ public class Die {
     }
 
     public void setFaceValue(int value) {
+        if (value>=1 && value<=6)
         this.faceValue = value;
     }
 

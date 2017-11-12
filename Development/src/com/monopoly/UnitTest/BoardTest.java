@@ -7,18 +7,6 @@ import org.junit.jupiter.api.Test;
 
 class BoardTest {
     Board board = new Board();
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
-    @Test
-    void getBlockStrings(){
-
-    }
     @Test
     void createBlock(){
 
