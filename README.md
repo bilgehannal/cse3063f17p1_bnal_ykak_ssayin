@@ -2,7 +2,7 @@
 
 
 
-Monopoly City Edition is a term project developed for CSE3063 Object-Oriented Sotfware Design Course in Fall 2017.
+Monopoly City Edition is a term project developed for CSE3063 Object-Oriented Software Design Course in Fall 2017.
 
 Members of project team are listed below:
 - Yusuf Kamil Ak
