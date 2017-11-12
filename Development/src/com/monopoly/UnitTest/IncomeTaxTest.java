@@ -9,16 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class IncomeTaxTest {
     Player player = new Player();
-    Money taxMoney = new Money(Money.Currency.TurkishLira,20000);
     IncomeTax incomeTax = new IncomeTax();
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
     @Test
     void payTax() {
         double initialMoney = player.getMoney().getAmount();

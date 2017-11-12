@@ -9,16 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class BankTest {
     Player player = new Player();
     Money money = new Money(Money.Currency.TurkishLira,10000);
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
     @Test
     void getInstance() {
+        assertTrue(Bank.getInstance() == Bank.getInstance());
     }
 
     @Test
