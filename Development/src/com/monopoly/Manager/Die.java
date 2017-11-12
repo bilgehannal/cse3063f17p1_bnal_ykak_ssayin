@@ -1,4 +1,4 @@
-package com.monopoly;
+package com.monopoly.Manager;
 
 public class Die {
 

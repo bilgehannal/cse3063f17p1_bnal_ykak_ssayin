@@ -1,4 +1,7 @@
-package com.monopoly;
+package com.monopoly.Board.Blocks;
+
+import com.monopoly.Bank.Money;
+import com.monopoly.Player.Player;
 
 public class IncomeTax extends RevenueTax {
 

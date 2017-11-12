@@ -1,12 +1,14 @@
 package com.monopoly.UnitTest;
 
+import com.monopoly.Manager.Die;
+import com.monopoly.Player.Player;
 import com.monopoly.utilities.PlayerComparator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import com.monopoly.*;
+
 class PlayerComparatorTest {
     PlayerComparator comp = new PlayerComparator();
     Player player1 = new Player();

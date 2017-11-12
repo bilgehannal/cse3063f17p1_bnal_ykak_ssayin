@@ -1,9 +1,9 @@
 package com.monopoly.UnitTest;
 
+import com.monopoly.Manager.Die;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import com.monopoly.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,4 +1,4 @@
-package com.monopoly;
+package com.monopoly.Bank;
 
 public class Money {
 

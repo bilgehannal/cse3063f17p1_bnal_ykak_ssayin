@@ -1,6 +1,9 @@
-package com.monopoly;
+package com.monopoly.Board.Blocks;
 
-public class LuxuryTax extends RevenueTax{
+import com.monopoly.Bank.Money;
+import com.monopoly.Player.Player;
+
+public class LuxuryTax extends RevenueTax {
 
     private static final double LUX_TAX_AMOUNT = 75;
 

@@ -1,6 +1,6 @@
 package com.monopoly.utilities;
 
-import com.monopoly.Player;
+import com.monopoly.Player.Player;
 
 import java.util.Comparator;
 

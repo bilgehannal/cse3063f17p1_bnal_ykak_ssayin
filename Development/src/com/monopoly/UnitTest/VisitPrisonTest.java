@@ -1,15 +1,17 @@
 package com.monopoly.UnitTest;
 
+import com.monopoly.Bank.Money;
+import com.monopoly.Board.Blocks.VisitPrison;
+import com.monopoly.Player.Player;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.monopoly.*;
 import static org.junit.jupiter.api.Assertions.*;
-class GoPrisonTest {
+class VisitPrisonTest {
     Money lowPenance = new Money(Money.Currency.TurkishLira,500);
     Money highPenance= new Money(Money.Currency.TurkishLira,50000000);
-    GoPrison prison = new GoPrison(lowPenance);
+    VisitPrison prison = new VisitPrison(lowPenance);
     Player player = new Player();
     @BeforeEach
     void setUp() {

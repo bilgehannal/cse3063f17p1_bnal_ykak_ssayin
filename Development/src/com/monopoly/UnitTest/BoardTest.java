@@ -1,8 +1,6 @@
 package com.monopoly.UnitTest;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import com.monopoly.*;
+import com.monopoly.Board.Board;
 import org.junit.jupiter.api.Test;
 
 class BoardTest {

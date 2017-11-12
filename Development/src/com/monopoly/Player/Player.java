@@ -1,4 +1,9 @@
-package com.monopoly;
+package com.monopoly.Player;
+import com.monopoly.Board.Blocks.Area;
+import com.monopoly.Manager.Die;
+import com.monopoly.Manager.Manager;
+import com.monopoly.Bank.Money;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -178,6 +183,10 @@ public class Player {
     // Dice methods
 
     public void rollDice() {
+        System.out.println("Dice values: " + dice.get(0).getFaceValue() + " - "
+                + dice.get(1).getFaceValue());
+        rotateDoublesArray(Manager.getInstance().checkForDouble(this));
+
         Random generator = new Random();
 
         for (int i = 0; i <dice.size() ; i++) {
@@ -187,6 +196,7 @@ public class Player {
 
         Manager.getInstance().checkForDouble(this);
     }
+
     public void rotateDoublesArray(boolean value){
         for (int i = 0; i <this.lastThreeDoubles.length-1 ; i++) {
             this.lastThreeDoubles[i] = this.lastThreeDoubles[i+1];

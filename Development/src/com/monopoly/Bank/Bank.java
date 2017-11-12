@@ -1,4 +1,6 @@
-package com.monopoly;
+package com.monopoly.Bank;
+
+import com.monopoly.Player.Player;
 
 // Singleton design pattern. Since we would like to assure bank instance will be created only once.
 public class Bank {
@@ -34,7 +36,7 @@ public class Bank {
     }
 
     // MARK: Utility Methods
-    public boolean pay(Player player,Money money) {
+    public boolean pay(Player player, Money money) {
         if (this.money.getAmount() > money.getAmount()) {
             player.addMoney(money);
             this.money.setAmount(this.money.getAmount() - money.getAmount());

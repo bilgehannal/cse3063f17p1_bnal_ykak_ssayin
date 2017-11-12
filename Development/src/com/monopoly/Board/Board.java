@@ -1,4 +1,10 @@
-package com.monopoly;
+package com.monopoly.Board;
+import com.monopoly.Bank.Deed;
+import com.monopoly.Bank.Money;
+import com.monopoly.Board.Blocks.*;
+import com.monopoly.Manager.Manager;
+import com.monopoly.Player.Position;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -83,9 +89,11 @@ public class Board {
         } else if(words[0].toLowerCase().contains("luxurytax")) {
             block = new LuxuryTax();
         } else if(words[0].toLowerCase().contains("goprison")) {
-            block = new GoPrison(new Money(Money.Currency.TurkishLira,50000));
+            block = new GoPrison();
         } else if(words[0].toLowerCase().contains("visitprison")) {
-            block = new VisitPrison();
+            int positionOfPrison = blocks.size();
+            Manager.getInstance().setPrisonPosition(new Position(positionOfPrison));
+            block = new VisitPrison(new Money(Money.Currency.TurkishLira,500000));
         } else if(words[0].toLowerCase().contains("beginning")) {
             block = new Beginning();
         }

@@ -1,6 +1,9 @@
 package com.monopoly.UnitTest;
 
-import com.monopoly.*;
+import com.monopoly.Bank.Deed;
+import com.monopoly.Bank.Money;
+import com.monopoly.Board.Blocks.Area;
+import com.monopoly.Player.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

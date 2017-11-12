@@ -1,6 +1,8 @@
 package com.monopoly.UnitTest;
 
-import com.monopoly.*;
+import com.monopoly.Bank.Bank;
+import com.monopoly.Board.Blocks.LuxuryTax;
+import com.monopoly.Player.Player;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

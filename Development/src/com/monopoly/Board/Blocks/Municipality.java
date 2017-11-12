@@ -1,4 +1,6 @@
-package com.monopoly;
+package com.monopoly.Board.Blocks;
+
+import com.monopoly.Board.Blocks.Area;
 
 import java.util.ArrayList;
 

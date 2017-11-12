@@ -1,10 +1,12 @@
 package com.monopoly.UnitTest;
 
+import com.monopoly.Board.Blocks.FreeParking;
+import com.monopoly.Player.Player;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import com.monopoly.*;
+
 class FreeParkingTest {
     Player player = new Player();
     FreeParking freeParking = new FreeParking();

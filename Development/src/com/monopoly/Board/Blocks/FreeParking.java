@@ -1,4 +1,6 @@
-package com.monopoly;
+package com.monopoly.Board.Blocks;
+
+import com.monopoly.Player.Player;
 
 public class FreeParking extends Block {
 

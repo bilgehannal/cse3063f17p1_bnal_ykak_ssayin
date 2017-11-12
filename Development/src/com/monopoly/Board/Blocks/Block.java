@@ -1,4 +1,7 @@
-package com.monopoly;
+package com.monopoly.Board.Blocks;
+
+import com.monopoly.Player.Player;
+import com.monopoly.Player.Position;
 
 public abstract class Block {
 

@@ -1,5 +1,12 @@
-package com.monopoly;
+package com.monopoly.Manager;
 
+import com.monopoly.Bank.Bank;
+import com.monopoly.Board.Blocks.Block;
+import com.monopoly.Board.Blocks.VisitPrison;
+import com.monopoly.Board.Board;
+import com.monopoly.Bank.Money;
+import com.monopoly.Player.Player;
+import com.monopoly.Player.Position;
 import com.monopoly.utilities.PlayerComparator;
 
 import java.util.ArrayList;
@@ -18,6 +25,7 @@ public class Manager {
     private int maxNumberOfIterations;
     private int currentIteration = 0;
     private String nameSet[] = {"Doc","Grumpy","Happy","Sleepy","Dopey","Bashful","Sneezy"};
+    private Position prisonPosition;
 
     // MARK: Constants
     private final double moneyAmountPerTurnOfBoard = 2000000;
@@ -96,6 +104,14 @@ public class Manager {
         return new Money(Money.Currency.TurkishLira,this.moneyAmountPerTurnOfBoard).toString();
     }
 
+    public void setPrisonPosition(Position prisonPosition) {
+        this.prisonPosition = prisonPosition;
+    }
+
+    public Position getPrisonPosition() {
+        return prisonPosition;
+    }
+
     // MARK: Utility Methods
 
     public void addPlayer(Player player){
@@ -119,56 +135,18 @@ public class Manager {
     }
 
     public boolean play(Player player) {
-
-        Scanner sc = new Scanner(System.in);
-        if (player.getisInJail() == false) {
-            if (!player.isAutoPlay()) {
-                System.out.println("Please press any key to roll the dice");
-                sc.nextLine();
-            } else {
-                System.out.println("Dice are rolled");
-            }
-            player.rollDice();
-            System.out.println("Dice values: " + player.getDice().get(0).getFaceValue() + " - "
-                    + player.getDice().get(1).getFaceValue());
-            player.rotateDoublesArray(checkForDouble(player));
-            if (isDoublesThree(player)){
-                player.setInJail(true);
-                // position
-            }
-            else {
-                int newPosition = updatePositionOf(player);
-
-                Block currentBlock = getBoard().getBlocks().get(player.getPosition().getIndex());
-                System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
-                System.out.println("Index of Block: " + newPosition);
-
-                currentBlock.interact(player);
-
-                System.out.println();
-            }
+        if (!player.getisInJail()) {
+            handleIfPlayerIsNotInPrison(player);
         }
         else{
-            if (player.getInJailTime() == 3){
-                System.out.println(player.getUsername() + "is out of jail");
-                player.setInJail(false);
-            }
-            else {
-                if (player.pay(GoPrison.getPenance())) {
-                    player.setInJail(false);
-                } else {
-                    player.rollDice();
-                    if (checkForDouble(player)) {
-                        player.setInJail(false);
-                        System.out.println(player.getUsername() + "is out of jail");
-                    } else {
-                        System.out.println(player.getUsername() + " is in jail");
-                        player.setInJailTime(player.getInJailTime() + 1);
-                    }
-                }
-            }
+            VisitPrison.handleIfPlayerInPrison(player);
         }
         return Manager.getInstance().checkForDouble(player);
+    }
+
+    public void sendPrison(Player player) {
+        player.setPosition(prisonPosition);
+        System.out.println(player.getUsername() + " is now in prison!");
     }
 
     private int updatePositionOf(Player player) {
@@ -187,6 +165,7 @@ public class Manager {
         player.getPosition().setIndex(newPositionIndex);
         return newPositionIndex;
     }
+
     public boolean checkForDouble(Player player){
         int firstValue = player.getDice().get(0).getFaceValue();
         int secondValue = player.getDice().get(1).getFaceValue();
@@ -195,6 +174,7 @@ public class Manager {
         }
         return false;
     }
+
     public boolean isDoublesThree(Player player){
         for (boolean value:player.getLastThreeDoubles()) {
             if (value == false)
@@ -202,5 +182,32 @@ public class Manager {
         }
         return true;
     }
+
+    private void handleIfPlayerIsNotInPrison(Player player) {
+        Scanner sc = new Scanner(System.in);
+        if (!player.isAutoPlay()) {
+            System.out.println("Please press any key to roll the dice");
+            sc.nextLine();
+        } else {
+            System.out.println("Dice are rolled");
+        }
+        player.rollDice();
+        if (isDoublesThree(player)){
+            player.setInJail(true);
+            Manager.getInstance().sendPrison(player);
+        }
+        else {
+            int newPosition = updatePositionOf(player);
+
+            Block currentBlock = getBoard().getBlocks().get(player.getPosition().getIndex());
+            System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
+            System.out.println("Index of Block: " + newPosition);
+
+            currentBlock.interact(player);
+
+            System.out.println();
+        }
+    }
+
 
 }

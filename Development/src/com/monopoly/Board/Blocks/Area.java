@@ -1,4 +1,8 @@
-package com.monopoly;
+package com.monopoly.Board.Blocks;
+
+import com.monopoly.Bank.Deed;
+import com.monopoly.Bank.Money;
+import com.monopoly.Player.Player;
 
 public class Area extends Block {
 
@@ -61,16 +65,19 @@ public class Area extends Block {
                 System.out.println(player.getUsername() + " has rent exemption. So s/he pays nothing this time.");
                 player.setHasRentExemption(false);
             }else {
-                if(player.pay(deed.getOwner(), getTotalRent())) {
-                    System.out.println(player.getUsername() + " paid "
-                            + getTotalRent() + " to " + deed.getOwner().getUsername() + " for rent.");
-                } else {
-                    if(deed.getOwner() != player) {
-                        player.setBankrupt(true);
+                if (deed.getOwner().getisInJail()) {
+                    System.out.println("Since the owner of this area is in prison, " + player.getUsername()
+                            + "won't pay a rent for this area, this time.");
+                }else {
+                    if(player.pay(deed.getOwner(), getTotalRent())) {
+                        System.out.println(player.getUsername() + " paid "
+                                + getTotalRent() + " to " + deed.getOwner().getUsername() + " for rent.");
+                    } else {
+                        if(deed.getOwner() != player) {
+                            player.setBankrupt(true);
+                        }
                     }
                 }
-
-
             }
         }
     }

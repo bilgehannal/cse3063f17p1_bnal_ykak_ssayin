@@ -1,7 +1,9 @@
-package com.monopoly;
+package com.monopoly.Main;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import com.monopoly.Board.Board;
+import com.monopoly.Manager.Manager;
+import com.monopoly.Player.Player;
+
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 

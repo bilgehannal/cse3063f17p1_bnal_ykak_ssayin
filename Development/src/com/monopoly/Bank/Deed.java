@@ -1,4 +1,7 @@
-package com.monopoly;
+package com.monopoly.Bank;
+
+import com.monopoly.Bank.Money;
+import com.monopoly.Player.Player;
 
 public class Deed{
 
