@@ -1,9 +1,9 @@
 package com.monopoly.Main;
 
+import com.monopoly.Bank.Money;
 import com.monopoly.Board.Board;
 import com.monopoly.Manager.Manager;
 import com.monopoly.Player.Player;
-
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +12,7 @@ public class Main {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+
         // getting singleton manager instance once.
         Manager manager = Manager.getInstance();
 
@@ -19,6 +20,9 @@ public class Main {
         clearConsole();
 
         determineIterations(); // How many iteration will be done?
+        clearConsole();
+
+        determineInitialMoney(); // How much money players will have ?
         clearConsole();
 
         manager.reorderPlayers(Manager.getInstance().getPlayers()); // Ordering players
@@ -60,6 +64,28 @@ public class Main {
             Player newPlayer =  new Player();
             Manager.getInstance().addPlayer(newPlayer);
         }
+    }
+    private static void determineInitialMoney(){
+        boolean valid ;
+        double initialMoney;
+        do {
+            valid = true;
+            initialMoney = Manager.getInstance().getPlayers().get(0).getInitialMoney();
+            System.out.println("Please enter initial money for players");
+            String choice = sc.nextLine();
+            try{
+                initialMoney = Double.parseDouble(choice);
+            }
+            catch (Exception e){
+                System.err.println("Invalid input.");
+                valid = false;
+            }
+
+            for (Player player:Manager.getInstance().getPlayers()) {
+                player.setMoney(new Money(Money.Currency.TurkishLira,initialMoney));
+            }
+        }while (!valid || initialMoney < 0 );
+
     }
 
     private static void determineIterations() {

@@ -26,7 +26,7 @@ public class Player {
     private boolean isBankrupt;
     private int doublesCounter;
     // MARK: Constants
-    private final double initialMoney = 2000000;
+    private double initialMoney = 2000000;
 
     // MARK: Constructor
     public Player(String username) {
@@ -135,6 +135,14 @@ public class Player {
 
     public boolean[] getLastThreeDoubles() {
         return lastThreeDoubles;
+    }
+
+    public void setInitialMoney(double initialMoney) {
+        this.initialMoney = initialMoney;
+    }
+
+    public double getInitialMoney() {
+        return initialMoney;
     }
 
     public void setBankrupt(boolean bankrupt) {

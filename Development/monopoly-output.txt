@@ -1,0 +1,6 @@
+Welcome to Monopoly! Who is this?
+How many players would you like to play with? 
+ENTER PLAYER NUMBER EXCEPT YOU (1..7) :
+There are/is 33 block determined.
+[H[2JWould you like to determine a maximum number of iterations? 
+If so, the richest player will win the game at the end of those iterations. (y / n)
