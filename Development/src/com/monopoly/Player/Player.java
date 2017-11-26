@@ -1,5 +1,6 @@
 package com.monopoly.Player;
 import com.monopoly.Board.Blocks.Area;
+import com.monopoly.Board.Building.Building;
 import com.monopoly.Manager.Die;
 import com.monopoly.Manager.Manager;
 import com.monopoly.Bank.Money;
@@ -50,6 +51,7 @@ public class Player {
         this.isBankrupt = false;
         this.doublesCounter = 0;
         Arrays.fill(this.lastThreeDoubles, Boolean.FALSE);
+        ownedAreas = new ArrayList<Area>();
     }
 
     // MARK: Encapsulation
@@ -152,8 +154,8 @@ public class Player {
 
     // Pay methods to player and bank
 
-    private boolean canPay(Money money){
-        if (this.money.getAmount() > money.getAmount()) {
+    public boolean canPay(Money money){
+        if (this.money.getAmount() >= money.getAmount()) {
             return true;
         }
         return false;
@@ -190,11 +192,16 @@ public class Player {
         Random generator = new Random();
 
         for (int i = 0; i <dice.size() ; i++) {
-            int newFaceValue = generator.nextInt(6)+1;
-            dice.get(i).setFaceValue(newFaceValue);
+            rollDie(dice.get(i));
         }
 
         Manager.getInstance().checkForDouble(this);
+    }
+
+    public void rollDie(Die die) {
+        Random generator = new Random();
+        int newFaceValue = generator.nextInt(6)+1;
+        die.setFaceValue(newFaceValue);
     }
 
     public void rotateDoublesArray(boolean value){
@@ -226,8 +233,8 @@ public class Player {
         }
         // AI and real player control to buy the area
         if(this.isAutoPlay()) {
-            this.rollDice();
-            return (this.getTotalDiceValue() > 4) ? true : false; // If rolled dice are greater than 4, then buy.
+            boolean randomSelection = Math.random() < 0.5 ? true : false;
+            return randomSelection; // If rolled dice are greater than 4, then buy.
         } else {
             Scanner sc = new Scanner(System.in);
             while(true) {
@@ -242,6 +249,26 @@ public class Player {
             }
         }
 
+    }
+
+    public boolean wantToBuildNewBuilding(Building building) {
+        // AI and real player control to build a new building
+        if(this.isAutoPlay()) {
+            boolean randomSelection = Math.random() < 0.5 ? true : false;
+            return randomSelection; // If rolled dice are greater than 4, then buy.
+        } else {
+            Scanner sc = new Scanner(System.in);
+            while(true) {
+                System.out.println("Do you want to build a new building: y/n");
+                String decision = sc.nextLine().toLowerCase();
+                if(decision.equals("y")) {
+                    return true;
+                } else if(decision.equals("n")) {
+                    return false;
+                }
+                System.out.println("Wrong input, please enter y or n");
+            }
+        }
     }
 
     public String getInfo() {
