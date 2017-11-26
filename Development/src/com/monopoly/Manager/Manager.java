@@ -22,7 +22,7 @@ public class Manager {
     private ArrayList<Player> players;
     private Board board;
     private Player winner;
-    private int maxNumberOfIterations;
+    private int maxNumberOfIterations = -1;
     private int currentIteration = 0;
     private String nameSet[] = {"Doc","Grumpy","Happy","Sleepy","Dopey","Bashful","Sneezy"};
     private Position prisonPosition;

@@ -100,8 +100,7 @@ public class Main {
                     handleSettingIterations();
                     break;
                 case "n":
-                    System.err.println("This part will be done in next iterations.");
-                    System.exit(0);
+                    System.out.println("Game will continue until everyone except the winner bankrupt.");
                     break;
                 default:
                     shouldContinue = true;
@@ -158,29 +157,51 @@ public class Main {
     }
 
     private static void iterateGame() {
+
+        Manager manager = Manager.getInstance();
+        if (manager.getMaxNumberOfIterations() == -1) { //if #iterations not determined.
+            while (gameShouldGoOn()) {
+                handleSingleIteration();
+            }
+        }else {
+            for(int i=0; i<manager.getMaxNumberOfIterations(); i++) {
+                handleSingleIteration();
+            }
+        }
+    }
+
+    private static boolean gameShouldGoOn() {
+        Manager manager = Manager.getInstance();
+        int bankruptCount = 0;
+        for (Player player : manager.getPlayers() ) {
+            if (player.isBankrupt()) {
+                bankruptCount += 1;
+            }
+        }
+        return bankruptCount == manager.getPlayers().size() - 1 ? false : true;
+    }
+
+    private static void handleSingleIteration() {
         final long delayTime = 500;
         Manager manager = Manager.getInstance();
-        for(int i=0; i<manager.getMaxNumberOfIterations(); i++) {
-            for (Player player : manager.getPlayers() ) {
-                if(!player.isBankrupt()) {
-                    if(getNumberOfActivePlayer() <= 1) {
-                        break;
-                    }
-                    System.out.println(player.getUsername() + "'s Turn:");
-
-                    while(manager.play(player)){ }
-                    System.out.println(player.getInfo());
-
-                    // There is a delay to check the other players' movement
-                    try {
-                        TimeUnit.MILLISECONDS.sleep(delayTime);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }else {
-                    return;
+        for (Player player : manager.getPlayers() ) {
+            if(!player.isBankrupt()) {
+                if(getNumberOfActivePlayer() <= 1) {
+                    break;
                 }
+                System.out.println(player.getUsername() + "'s Turn:");
 
+                while(manager.play(player)){ }
+                System.out.println(player.getInfo());
+
+                // There is a delay to check the other players' movement
+                try {
+                    TimeUnit.MILLISECONDS.sleep(delayTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }else {
+                return;
             }
         }
     }
