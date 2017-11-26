@@ -78,10 +78,18 @@ public class Board {
         if(words[0].toLowerCase().contains("area")) {
             String areaName = words[1];
             double priceAmount = Double.parseDouble(words[2]);
-            double rentAmount = Double.parseDouble(words[3]);
+            double rentAmount0 = Double.parseDouble(words[3]);
+            double rentAmount1 = Double.parseDouble(words[4]);
+            double rentAmount2 = Double.parseDouble(words[5]);
+            double rentAmount3 = Double.parseDouble(words[6]);
+            double rentAmount4 = Double.parseDouble(words[7]);
             Money moneyPrice = new Money(Money.Currency.TurkishLira,priceAmount);
-            Money moneyRent = new Money(Money.Currency.TurkishLira,rentAmount);
-            Deed deed = new Deed(moneyPrice, moneyRent);
+            Money moneyRent0 = new Money(Money.Currency.TurkishLira,rentAmount0);
+            Money moneyRent1 = new Money(Money.Currency.TurkishLira,rentAmount1);
+            Money moneyRent2 = new Money(Money.Currency.TurkishLira,rentAmount2);
+            Money moneyRent3 = new Money(Money.Currency.TurkishLira,rentAmount3);
+            Money moneyRent4 = new Money(Money.Currency.TurkishLira,rentAmount4);
+            Deed deed = new Deed(moneyPrice, moneyRent0, moneyRent1, moneyRent2, moneyRent3, moneyRent4);
             block = new Area(areaName, deed);
 
         } else if(words[0].toLowerCase().contains("incometax")) {
