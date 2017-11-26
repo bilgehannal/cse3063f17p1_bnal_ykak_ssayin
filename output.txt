@@ -1,0 +1,3 @@
+[H[2JWelcome to Monopoly! Who is this?
+How many players would you like to play with? 
+ENTER PLAYER NUMBER EXCEPT YOU (1..7) :
