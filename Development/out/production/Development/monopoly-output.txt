@@ -1,0 +1,33 @@
+Welcome to Monopoly! Who is this?
+How many players would you like to play with? 
+ENTER PLAYER NUMBER EXCEPT YOU (1..7) :
+There are/is 29 block determined.
+[H[2JWould you like to determine a maximum number of iterations? 
+If so, the richest player will win the game at the end of those iterations. (y / n)
+ENTER NUMBER OF ITERATION:
+[H[2JPlease enter initial money for players
+[H[2JDice values: 1 - 1
+Dice values: 1 - 1
+Order of Players: 
+Happy   Dice: 5 - 2
+serdar123   Dice: 3 - 2
+Happy's Turn:
+Dice are rolled
+Dice values: 5 - 2
+Happy has moved 4
+Index of Block: 4
+
+Name: Happy -> money: 1.0 ₺ (TurkishLira)
+serdar123's Turn:
+Please press any key to roll the dice
+Dice values: 3 - 2
+serdar123 has moved 9
+Index of Block: 9
+
+Name: serdar123 -> money: 1.0 ₺ (TurkishLira)
+Name: Happy -> money: 1.0 ₺ (TurkishLira)
+Name: serdar123 -> money: 1.0 ₺ (TurkishLira)
+----------------------
+The winner of the game
+----------------------
+Name: Happy -> money: 1.0 ₺ (TurkishLira)
