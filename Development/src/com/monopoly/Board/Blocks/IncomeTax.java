@@ -11,7 +11,7 @@ public class IncomeTax extends RevenueTax {
     public Money payTax(Player player) {
 
         double currentMoneyOfPlayer = player.getMoney().getAmount();
-        double taxValue = (currentMoneyOfPlayer / 100.0) * (100.0 - PERCENTAGE_OF_TAX);
+        double taxValue = (currentMoneyOfPlayer / 100.0) * (PERCENTAGE_OF_TAX);
         Money taxAmount = new Money(Money.Currency.TurkishLira, taxValue);
         if(!player.pay(taxAmount)) {
             taxAmount.setAmount(-1);
