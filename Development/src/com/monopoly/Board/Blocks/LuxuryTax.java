@@ -1,5 +1,6 @@
 package com.monopoly.Board.Blocks;
 
+import com.monopoly.Bank.Bank;
 import com.monopoly.Bank.Money;
 import com.monopoly.Player.Player;
 
@@ -11,7 +12,7 @@ public class LuxuryTax extends RevenueTax {
     public Money payTax(Player player) {
 
         Money taxAmount = new Money(Money.Currency.TurkishLira, LUX_TAX_AMOUNT);
-        if(!player.pay(taxAmount)) {
+        if(Bank.getInstance().receivePayment(player, taxAmount)) {
             taxAmount.setAmount(-1);
         }
         return taxAmount;
