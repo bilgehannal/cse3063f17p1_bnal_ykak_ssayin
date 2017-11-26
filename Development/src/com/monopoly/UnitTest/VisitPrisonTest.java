@@ -24,11 +24,13 @@ class VisitPrisonTest {
     @Test
     void interact() {
         //Check for payment
+        player.setInJail(true);
         prison.setPenance(lowPenance);
         prison.interact(player);
         assertTrue(player.getisInJail() == false);
         // Check for not enough money.
         int initialInPrisonTime = player.getInJailTime();
+        player.setInJail(true);
         prison.setPenance(highPenance);
         prison.interact(player);
         assertTrue(player.getisInJail() == true);

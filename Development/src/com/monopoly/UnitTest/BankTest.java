@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BankTest {
     Player player = new Player();
-    Money money = new Money(Money.Currency.TurkishLira,10000);
+    Money money = new Money(Money.Currency.TurkishLira,600);
     @Test
     void getInstance() {
         assertTrue(Bank.getInstance() == Bank.getInstance());
@@ -25,10 +25,12 @@ class BankTest {
 
     @Test
     void receivePayment() {
+        double initialMoney = player.getMoney().getAmount();
         double prev = Bank.getInstance().getMoney().getAmount();
         Bank.getInstance().receivePayment(player,money);
         double current = Bank.getInstance().getMoney().getAmount();
         assertEquals(prev+money.getAmount(),current);
+        assertEquals(initialMoney-money.getAmount(),player.getMoney().getAmount());
     }
 
 }
