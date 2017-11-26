@@ -175,7 +175,6 @@ public class Player {
         if (canPay(money)){
             double newAmount = this.money.getAmount() - money.getAmount();
             this.money.setAmount(newAmount);
-            Bank.getInstance().getMoney().setAmount(Bank.getInstance().getMoney().getAmount() + money.getAmount());
             return true;
         }
         return false;

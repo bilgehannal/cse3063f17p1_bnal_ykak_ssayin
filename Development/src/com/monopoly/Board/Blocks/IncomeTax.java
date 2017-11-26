@@ -1,5 +1,6 @@
 package com.monopoly.Board.Blocks;
 
+import com.monopoly.Bank.Bank;
 import com.monopoly.Bank.Money;
 import com.monopoly.Player.Player;
 
@@ -13,7 +14,7 @@ public class IncomeTax extends RevenueTax {
         double currentMoneyOfPlayer = player.getMoney().getAmount();
         double taxValue = (currentMoneyOfPlayer / 100.0) * (PERCENTAGE_OF_TAX);
         Money taxAmount = new Money(Money.Currency.TurkishLira, taxValue);
-        if(!player.pay(taxAmount)) {
+        if(!Bank.getInstance().receivePayment(player, taxAmount)) {
             taxAmount.setAmount(-1);
         }
         return taxAmount;
