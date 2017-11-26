@@ -11,11 +11,12 @@ public class UtilityArea extends Area {
 
     public UtilityArea(String name, Deed deed) {
         super(name,deed);
+        super.setBuildable(false);
     }
 
     @Override
     public void interact(Player player) {
-        getDeed().setRentPrice(new Money(Money.Currency.TurkishLira,player.getTotalDiceValue() * 10000));
+        super.getDeed().getRentPrices()[0] = (new Money(Money.Currency.TurkishLira,player.getTotalDiceValue() * 10000));
         super.interact(player);
     }
 }
