@@ -1,4 +1,5 @@
 package com.monopoly.Player;
+import com.monopoly.Bank.Bank;
 import com.monopoly.Board.Blocks.Area;
 import com.monopoly.Board.Building.Building;
 import com.monopoly.Manager.Die;
@@ -174,6 +175,7 @@ public class Player {
         if (canPay(money)){
             double newAmount = this.money.getAmount() - money.getAmount();
             this.money.setAmount(newAmount);
+            Bank.getInstance().getMoney().setAmount(Bank.getInstance().getMoney().getAmount() + money.getAmount());
             return true;
         }
         return false;
