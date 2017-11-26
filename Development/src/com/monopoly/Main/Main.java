@@ -186,7 +186,7 @@ public class Main {
         Manager manager = Manager.getInstance();
         for (Player player : manager.getPlayers() ) {
             if(!player.isBankrupt()) {
-                if(getNumberOfActivePlayer() <= 1) {
+                if(getNumberOfActivePlayer () <= 1) {
                     break;
                 }
                 System.out.println(player.getUsername() + "'s Turn:");
