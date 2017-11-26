@@ -3,7 +3,7 @@ package com.monopoly.Board.Blocks;
 import com.monopoly.Manager.Manager;
 import com.monopoly.Player.Player;
 
-public class Beginning extends Block {
+public class EmptyBlock extends Block {
 
     @Override
     public void interact(Player player) {

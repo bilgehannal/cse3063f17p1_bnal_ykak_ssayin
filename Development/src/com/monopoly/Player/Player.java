@@ -226,8 +226,8 @@ public class Player {
         }
         // AI and real player control to buy the area
         if(this.isAutoPlay()) {
-            int randomNumber = (int)((Math.random()*2) + 1);
-            return (randomNumber == 1) ? true : false; // If randomNumber is 1 then, buy the area
+            this.rollDice();
+            return (this.getTotalDiceValue() > 4) ? true : false; // If rolled dice are greater than 4, then buy.
         } else {
             Scanner sc = new Scanner(System.in);
             while(true) {

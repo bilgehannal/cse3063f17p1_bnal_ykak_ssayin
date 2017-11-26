@@ -9,7 +9,6 @@ public class Area extends Block {
     // MARK: Properties
 
     private String name;
-    private Municipality municipality;
     private Deed deed;
 
     // CONSTRUCTOR
@@ -28,14 +27,6 @@ public class Area extends Block {
 
     public String getName() {
         return name;
-    }
-
-    public void setMunicipality(Municipality municipality) {
-        this.municipality = municipality;
-    }
-
-    public Municipality getMunicipality() {
-        return municipality;
     }
 
     public void setDeed(Deed deed) {
@@ -57,6 +48,7 @@ public class Area extends Block {
                     deed.setOwner(player);
                     System.out.println(name + " is bought by " + player.getUsername());
                 } else {
+                    player.setMoney(new Money(Money.Currency.TurkishLira,0));
                     player.setBankrupt(true);
                 }
             }

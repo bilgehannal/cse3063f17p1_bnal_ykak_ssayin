@@ -2,45 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5019e6c-cd7e-4075-9fa1-54da7875a86a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Area.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Bank.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Beginning.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Block.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Board.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Deed.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Die.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/FreeParking.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/GoPrison.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/IncomeTax.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/LuxuryTax.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Manager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Money$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Money$Currency.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Money.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Municipality.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Player.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Position.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/RevenueTax.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/VisitPrison.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Documents/CSE3063F17P1_UML_bnal_ykak_ssayin_iteration1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Documents/cse3063_f17p1_bnal_ykak_ssayin_SSD_firstIteration.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/AreaTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/AreaTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/BankTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/BankTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/BoardTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/BoardTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/DieTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/DieTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/FreeParkingTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/FreeParkingTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/IncomeTaxTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/IncomeTaxTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/LuxuryTaxTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/LuxuryTaxTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/ManagerTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/ManagerTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/PlayerComparatorTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/PlayerComparatorTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/PlayerTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/PlayerTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/VisitPrisonTest.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/UnitTest/VisitPrisonTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/utilities/PlayerComparator.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/utilities/PlayerComparator.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/UtilityArea.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Board/Blocks/Municipality.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Municipality.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Beginning.java" afterPath="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/EmptyBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Board/Blocks/Area.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/Board/Blocks/Area.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Board/Board.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/Board/Board.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/com/monopoly/Player/Player.class" afterPath="$PROJECT_DIR$/out/production/Development/com/monopoly/Player/Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/board.txt" afterPath="$PROJECT_DIR$/board.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Development/board.txt" afterPath="$PROJECT_DIR$/out/production/Development/board.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monopoly/Bank/Deed.java" afterPath="$PROJECT_DIR$/src/com/monopoly/Bank/Deed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Area.java" afterPath="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Area.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monopoly/Board/Board.java" afterPath="$PROJECT_DIR$/src/com/monopoly/Board/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monopoly/Main/Main.java" afterPath="$PROJECT_DIR$/src/com/monopoly/Main/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monopoly/Player/Player.java" afterPath="$PROJECT_DIR$/src/com/monopoly/Player/Player.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,18 +29,18 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/monopoly/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="2205">
+              <caret line="154" column="27" lean-forward="true" selection-start-line="154" selection-start-column="27" selection-end-line="154" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Manager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Manager/Manager.java">
+      <file leaf-file-name="Area.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Area.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,43 +48,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Money.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Bank/Money.java">
+      <file leaf-file-name="UtilityArea.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/UtilityArea.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Deed.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Bank/Deed.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Die.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Manager/Die.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Player/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3270">
-              <caret line="252" column="22" lean-forward="false" selection-start-line="252" selection-start-column="22" selection-end-line="252" selection-end-column="22" />
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#358#359#0" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,18 +65,18 @@
       <file leaf-file-name="board.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/board.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="788">
-              <caret line="99" column="61" lean-forward="false" selection-start-line="99" selection-start-column="61" selection-end-line="99" selection-end-column="61" />
+            <state relative-caret-position="293">
+              <caret line="96" column="66" lean-forward="true" selection-start-line="96" selection-start-column="66" selection-end-line="96" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,21 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Position.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Player/Position.java">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bank.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monopoly/Bank/Bank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="38">
+              <caret line="229" column="67" lean-forward="true" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -163,8 +99,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -182,6 +118,7 @@
       <find>reor</find>
       <find>move</find>
       <find>pay</find>
+      <find>railroad</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -198,8 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/UnitTest/AreaTest.java" />
-        <option value="$PROJECT_DIR$/src/com/UnitTest/BankTest.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Bank.java" />
         <option value="$PROJECT_DIR$/src/com/UnitTest/BeginningTest.java" />
         <option value="$PROJECT_DIR$/src/com/UnitTest/BoardTest.java" />
@@ -228,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/com/monopoly/Manager.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/UnitTest/GoPrisonTest.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/VisitPrison.java" />
-        <option value="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Area.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Beginning.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Board/Block.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Block.java" />
@@ -240,19 +174,22 @@
         <option value="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/RevenueTax.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/VisitPrison.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Manager/Manager.java" />
-        <option value="$PROJECT_DIR$/src/com/monopoly/Main/Main.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Player/Position.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Bank/Bank.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Bank/Money.java" />
-        <option value="$PROJECT_DIR$/src/com/monopoly/Bank/Deed.java" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Manager/Die.java" />
-        <option value="$PROJECT_DIR$/src/com/monopoly/Player/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/monopoly/Bank/Deed.java" />
+        <option value="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/UtilityArea.java" />
+        <option value="$PROJECT_DIR$/src/com/monopoly/Main/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/EmptyBlock.java" />
         <option value="$PROJECT_DIR$/board.txt" />
         <option value="$PROJECT_DIR$/src/com/monopoly/Board/Board.java" />
+        <option value="$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Area.java" />
+        <option value="$PROJECT_DIR$/src/com/monopoly/Player/Player.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -298,6 +235,13 @@
               <item name="Development" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="monopoly" type="462c0819:PsiDirectoryNode" />
+              <item name="Bank" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Development" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Development" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="monopoly" type="462c0819:PsiDirectoryNode" />
               <item name="Board" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -305,7 +249,22 @@
               <item name="Development" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="monopoly" type="462c0819:PsiDirectoryNode" />
+              <item name="Board" type="462c0819:PsiDirectoryNode" />
+              <item name="Blocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Development" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Development" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="monopoly" type="462c0819:PsiDirectoryNode" />
               <item name="Main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Development" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Development" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="monopoly" type="462c0819:PsiDirectoryNode" />
+              <item name="Manager" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -634,15 +593,15 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27184466" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4223301" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -657,7 +616,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -675,7 +633,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Development/src/com/monopoly/Position.java" />
     <entry file="file://$PROJECT_DIR$/Development/src/com/monopoly/Player.java" />
     <entry file="file://$PROJECT_DIR$/Development/src/com/monopoly/Game.java" />
     <entry file="file://$PROJECT_DIR$/src/com/monopoly/Main/Main.java">
@@ -739,41 +696,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Area.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Beginning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/FreeParking.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/GoPrison.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -791,13 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Municipality.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/RevenueTax.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -810,24 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Manager/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -848,6 +750,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Manager/Die.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monopoly/Bank/Money.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -858,45 +768,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monopoly/Bank/Deed.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/GoPrison.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Manager/Die.java">
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="60">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Player/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Municipality.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3270">
-          <caret line="252" column="22" lean-forward="false" selection-start-line="252" selection-start-column="22" selection-end-line="252" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="480">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/EmptyBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/board.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="99" column="61" lean-forward="false" selection-start-line="99" selection-start-column="61" selection-end-line="99" selection-end-column="61" />
+        <state relative-caret-position="293">
+          <caret line="96" column="66" lean-forward="true" selection-start-line="96" selection-start-column="66" selection-end-line="96" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/Area.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Manager/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1652">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2205">
+          <caret line="154" column="27" lean-forward="true" selection-start-line="154" selection-start-column="27" selection-end-line="154" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Board/Blocks/UtilityArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monopoly/Player/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="229" column="67" lean-forward="true" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>

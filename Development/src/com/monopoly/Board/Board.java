@@ -22,7 +22,7 @@ public class Board {
     public Board() {
 
         blocks = new ArrayList<Block>();
-        blocks.add(new Beginning());
+        blocks.add(new EmptyBlock());
 
         String[] blockStrings = getBlockStrings();
         for (String str : blockStrings ) {
@@ -94,11 +94,16 @@ public class Board {
             int positionOfPrison = blocks.size();
             Manager.getInstance().setPrisonPosition(new Position(positionOfPrison));
             block = new VisitPrison(new Money(Money.Currency.TurkishLira,500000));
-        } else if(words[0].toLowerCase().contains("beginning")) {
-            block = new Beginning();
-        }
-        else if(words[0].toLowerCase().contains("freeparking")) {
+        } else if(words[0].toLowerCase().contains("EmptyBlock")) {
+            block = new EmptyBlock();
+        } else if(words[0].toLowerCase().contains("freeparking")) {
             block = new FreeParking();
+        } else if(words[0].toLowerCase().contains("electricityUtility")) {
+            block = new UtilityArea("ElectricityUtility",new Deed(new Money(Money.Currency.TurkishLira,150000),new Money(Money.Currency.TurkishLira,10000)));
+        } else if(words[0].toLowerCase().contains("waterUtility")) {
+            block = new UtilityArea("WaterUtility",new Deed(new Money(Money.Currency.TurkishLira,150000),new Money(Money.Currency.TurkishLira,10000)));
+        } else if(words[0].toLowerCase().contains("railroad")) {
+            block = new UtilityArea("Railroad",new Deed(new Money(Money.Currency.TurkishLira,200000),new Money(Money.Currency.TurkishLira,5000)));
         }
 
         return block;

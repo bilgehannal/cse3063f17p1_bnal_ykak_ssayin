@@ -9,7 +9,7 @@ public class Deed{
     private Money rentPrice;
     private Player owner;
 
-    // MARK: Constructer
+    // MARK: Constructor
 
     public Deed(Money price, Money rentPrice) {
         this.price = price;
