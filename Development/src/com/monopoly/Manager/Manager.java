@@ -92,6 +92,8 @@ public class Manager {
         this.winner = winner;
     }
 
+    public Player getWinner() { return this.winner; }
+
     public void setMaxNumberOfIterations(int maxNumberOfIterations) {
         this.maxNumberOfIterations = maxNumberOfIterations;
     }
@@ -191,7 +193,7 @@ public class Manager {
         } else {
             System.out.println("Dice are rolled");
         }
-        player.rollDice();
+
         if (isDoublesThree(player)){
             player.setInJail(true);
             Manager.getInstance().sendPrison(player);
@@ -201,11 +203,15 @@ public class Manager {
 
             Block currentBlock = getBoard().getBlocks().get(player.getPosition().getIndex());
             System.out.println(player.getUsername() + " has moved " + player.getTotalDiceValue());
-            System.out.println("Index of Block: " + newPosition);
 
+            System.out.println("Index of Block: " + newPosition);
+            System.out.println("Current block: " + currentBlock.getBlockName());
             currentBlock.interact(player);
 
             System.out.println();
+        }
+        if (player.getDice().get(0).getFaceValue() != 0) {
+            player.rollDice();
         }
     }
 

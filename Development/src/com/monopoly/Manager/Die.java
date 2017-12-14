@@ -7,7 +7,7 @@ public class Die {
 
     // MARK: Constructors
     public Die(){
-        this.faceValue = 1;
+        this.faceValue = 0;
     }
 
     // MARK: Encapsulation

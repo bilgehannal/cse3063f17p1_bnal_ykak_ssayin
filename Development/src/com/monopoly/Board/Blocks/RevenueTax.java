@@ -10,6 +10,9 @@ public abstract class RevenueTax extends Block {
     private Money taxAmount;
 
     // CONSTRUCTOR:
+    public RevenueTax() {
+        this.setBlockName("RevenueTax");
+    }
 
     //MARK: Encapsulation
 

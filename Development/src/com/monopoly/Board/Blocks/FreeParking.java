@@ -4,6 +4,10 @@ import com.monopoly.Player.Player;
 
 public class FreeParking extends Block {
 
+    public FreeParking() {
+        this.setBlockName("FreeParking");
+    }
+
     @Override
     public void interact(Player player) {
         player.setHasRentExemption(true);

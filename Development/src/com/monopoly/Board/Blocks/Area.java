@@ -21,6 +21,7 @@ public class Area extends Block {
     // CONSTRUCTOR
 
     public Area(String name, Deed deed) {
+        this.setBlockName(name);
         this.name = name;
         this.deed = deed;
         buildings = new ArrayList<Building>();
@@ -64,7 +65,6 @@ public class Area extends Block {
 
     // MARK: Utilities
 
-    @Override
     public void interact(Player player) {
         if(deed.getOwner() == null) {
             interactNotOwnedArea(player);
@@ -83,6 +83,8 @@ public class Area extends Block {
                     System.out.println(name + " is bought by " + player.getUsername());
                 }
             }
+        }else {
+            System.out.println(player.getUsername() + " can't buy " + name + " becuase s/he does not have enough money to effort.");
         }
 
     }

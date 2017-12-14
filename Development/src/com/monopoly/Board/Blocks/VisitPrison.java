@@ -11,6 +11,7 @@ public class VisitPrison extends Block {
 
     // MARK: Constructor
     public VisitPrison(Money penance) {
+        this.setBlockName("VisitPrison");
         this.penance = penance;
     }
 

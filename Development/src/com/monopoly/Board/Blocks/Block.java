@@ -7,7 +7,7 @@ public abstract class Block {
 
     // MARK: Properties
 
-    private String ID;
+    private String blockName;
     private Position position;
     // MARK: Encapsulation
 
@@ -20,12 +20,12 @@ public abstract class Block {
         return position;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setBlockName(String blockName) {
+        this.blockName = blockName;
     }
 
-    public String getID() {
-        return ID;
+    public String getBlockName() {
+        return blockName;
     }
 
     public abstract void interact(Player player);

@@ -5,6 +5,10 @@ import com.monopoly.Player.Player;
 
 public class GoPrison extends Block {
 
+    public GoPrison() {
+        this.setBlockName("GoPrison");
+    }
+
     @Override
     public void interact(Player player) {
         System.out.println(player.getUsername() + " is heading to the prison block!");

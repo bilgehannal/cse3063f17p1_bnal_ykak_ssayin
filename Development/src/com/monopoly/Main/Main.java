@@ -139,11 +139,21 @@ public class Main {
     }
 
     public static void showResult() {
-        Player winner = Manager.getInstance().getPlayers().get(0);
-        for (Player player : Manager.getInstance().getPlayers()) {
-            System.out.println(player.getInfo());
+        Manager manager = Manager.getInstance();
+        manager.setWinner(manager.getPlayers().get(0));
+        for (Player player: manager.getPlayers()) {
+            if (player.getMoney().getAmount() > manager.getWinner().getMoney().getAmount()) {
+                manager.setWinner(player);
+            }
         }
-        System.out.println("----------------------\nThe winner of the game\n----------------------\n" + winner.getInfo());
+        System.out.println("----------------------\nThe winner of the game\n----------------------\n"
+                + manager.getWinner().getInfo() + "\n\n");
+        for (Player player : Manager.getInstance().getPlayers()) {
+            if (player.getUsername() != manager.getWinner().getUsername()) {
+                System.out.println(player.getInfo());
+            }
+        }
+
     }
 
     private static int getNumberOfActivePlayer() {
@@ -189,7 +199,7 @@ public class Main {
                 if(getNumberOfActivePlayer () <= 1) {
                     break;
                 }
-                System.out.println(player.getUsername() + "'s Turn:");
+                System.out.println("\n" + player.getUsername() + "'s Turn:");
 
                 while(manager.play(player)){ }
                 System.out.println(player.getInfo());

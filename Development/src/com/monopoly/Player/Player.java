@@ -194,8 +194,10 @@ public class Player {
     // Dice methods
 
     public void rollDice() {
-        System.out.println("Dice values: " + dice.get(0).getFaceValue() + " - "
-                + dice.get(1).getFaceValue());
+        if (dice.get(0).getFaceValue() != 0) {
+            System.out.println("Dice values: " + dice.get(0).getFaceValue() + " - "
+                    + dice.get(1).getFaceValue());
+        }
         rotateDoublesArray(Manager.getInstance().checkForDouble(this));
 
         Random generator = new Random();
@@ -222,7 +224,7 @@ public class Player {
 
     public int getTotalDiceValue() {
         int sum = 0;
-        for (Die die : dice) {
+        for (Die die : this.dice) {
             sum += die.getFaceValue();
         }
         return sum;
