@@ -22,7 +22,6 @@ public abstract class RevenueTax extends Block {
         return taxAmount;
     }
 
-    @Override
     public void interact(Player player) {
         Money taxAmount = payTax(player);
         if(taxAmount.getAmount() != -1) {
