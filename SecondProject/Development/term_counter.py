@@ -6,7 +6,7 @@ from operator import itemgetter
 from math import log10
 import os
 
-string = "Bilgehan NAL what are you doing Bilgehan Bilgehan NAL a c b cv e rt y d a a a a a a"
+string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Bilgehan NAL what are you doing Bilgehan Bilgehan NAL a c b cv e rt y d a a a a a a"
 string2 = " NAL NAL 2 3 4"
 
 string_list = [string, string2]
@@ -84,7 +84,7 @@ def write_tf_to_file(filename, tf_list):
             file.write(string)
         
 
-write_tf_to_file("deneme.cvs",calculate_tf(string_list)[1])
+write_tf_to_file("wordcloud.py/words.csv",calculate_tf(string_list)[0])
 print(calculate_tf(string_list))
 print( "" )
 print(calculate_tf_idf(string_list))
