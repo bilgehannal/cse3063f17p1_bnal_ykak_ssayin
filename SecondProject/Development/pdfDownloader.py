@@ -3,7 +3,6 @@
 
 from bs4 import BeautifulSoup
 import urllib.request
-import wget
 import requests
 
 with urllib.request.urlopen('http://mimoza.marmara.edu.tr/~omer.korcak/') as response:
