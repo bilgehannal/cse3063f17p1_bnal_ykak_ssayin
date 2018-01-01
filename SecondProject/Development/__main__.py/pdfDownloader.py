@@ -4,6 +4,8 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import requests
+import os
+
 
 with urllib.request.urlopen('http://mimoza.marmara.edu.tr/~omer.korcak/') as response:
    html_doc = response.read()
@@ -34,3 +36,5 @@ for html in soup.find_all('a'):
 for a in list:
 	print(a)
 	download_file(a)
+
+os.system("mv *.pdf inputFiles/")

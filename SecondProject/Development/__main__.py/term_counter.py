@@ -8,8 +8,15 @@ import os
 
 string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Bilgehan NAL what are you doing Bilgehan Bilgehan NAL a c b cv e rt y d a a a a a a"
 string2 = " NAL NAL 2 3 4"
+string_list = []
 
-string_list = [string, string2]
+txtFileArray = os.listdir('txtFiles')
+for file in txtFileArray:
+    if "Prep.txt" in file:
+        print(file)
+        with open('txtFiles/' + file, 'r') as myfile:
+            data=myfile.read().replace('\n', '')
+        string_list.append(data)
 
 # counting the words in a string and save in a dictionary
 def count_words(string_list):
@@ -82,9 +89,20 @@ def write_tf_to_file(filename, tf_list):
             if(not tf_tuple[0] == tf_list[len(tf_list)-1][0]):
                 string += "\n"
             file.write(string)
-        
 
-write_tf_to_file("wordcloud.py/words.csv",calculate_tf(string_list)[0])
-print(calculate_tf(string_list))
-print( "" )
-print(calculate_tf_idf(string_list))
+
+tf = calculate_tf(string_list)
+calculated_idf_list = update_inverse_document_frequency(tf, string_list)
+
+index = 0
+tf_calculated_files = calculate_tf(string_list)
+tf_idf_calculated_files = calculate_tf_idf(string_list)
+
+for words in tf_calculated_files:
+    write_tf_to_file("csvFiles/" + str(index) + "tf.csv",words)
+    index += 1
+
+index = 0
+for words in tf_idf_calculated_files:
+    write_tf_to_file("csvFiles/" + str(index) + "tf_if.csv",words)
+    index += 1
