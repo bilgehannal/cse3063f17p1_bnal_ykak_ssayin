@@ -16,6 +16,6 @@ for file in fileArray:
     if ".txt" in file:
         os.system("python3 prep.py txtFiles/" + file)
         print(file + " is prepproccesed!")
-        #os.system("python3 wordcloud.py")
+        os.system("python3 wordcloud.py --text" + file)
 
 os.system("python3 term_counter.py")

@@ -1,4 +1,5 @@
-
+import matplotlib.pyplot as plt
+from PIL import Image
 from os import path
 from wordcloud import WordCloud
 
@@ -24,5 +25,5 @@ plt.axis("off")
 plt.show()
 
 # The pil way (if you don't have matplotlib)
-# image = wordcloud.to_image()
-# image.show()
+image = wordcloud.to_image()
+image.show()
